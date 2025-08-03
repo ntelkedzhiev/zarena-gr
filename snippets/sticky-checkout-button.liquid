@@ -1,0 +1,21 @@
+<form action="/cart" method="post" novalidate>
+  <input type="hidden" name="checkout" value="Checkout">
+  <button
+    name="checkout"
+    type="submit"
+    id="sticky-checkout-button"
+    class="sticky-buttons sticky-button checkout"
+  >
+    <div class="sticky-button__title">{{ 'cart.general.checkout' | t }} ({{ cart.item_count }})</div>
+    <div>
+      {% if cart.total_price > 10000 %}
+        Безплатна доставка и преглед
+      {% else %}
+        опция преглед
+      {% endif %}
+    </div>
+    <div class="cart-icon--basket2" style="position: absolute;right: 12px; bottom:18px">
+      {% render 'shopping-cart-moving' %}
+    </div>
+  </button>
+</form>

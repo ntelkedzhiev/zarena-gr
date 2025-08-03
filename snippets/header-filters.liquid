@@ -1,0 +1,26 @@
+{{ 'header-filters.css' | asset_url | stylesheet_tag }}
+
+<div class="header-filters-container">
+  {%- for filter in filters -%}
+    {% if filter.label contains 'Header' %}
+      {%- case filter.type -%}
+        {%- when 'boolean' -%}
+          <facet-add class="header-filters__item-container">
+            <a class="header-filters__add-filter" href="{{ filter.true_value.url_to_add }}">
+              {% assign snake_case_label = filter.label | replace: ' ', '_' | downcase %}
+              {% assign namespaced_label = 'products.product.' | append: snake_case_label %}
+              {{ namespaced_label | t | upcase }}
+            </a>
+          </facet-add>
+        {% when 'list' %}
+          {%- for filter_value in filter.values -%}
+            <facet-add class="header-filters__item-container">
+              <a class="header-filters__add-filter" href="{{ filter_value.url_to_add }}">
+                {{ filter_value.label | upcase }}
+              </a>
+            </facet-add>
+          {%- endfor -%}
+      {% endcase %}
+    {% endif %}
+  {%- endfor -%}
+</div>

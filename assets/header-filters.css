@@ -1,0 +1,45 @@
+.header-filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0px;
+}
+
+
+.header-filters__item-container {
+  display: flex;
+
+}
+
+  @media (max-width: 767px) {
+    .header-filters__item-container {
+      margin-top: 6px;
+    }
+
+    .header-filters {
+      gap: 6px;
+    }
+
+    .header-filters__clear,
+    .header-filters__add-filter {
+      font-size: 14px;
+    }
+  }
+
+  .header-filters__add-filter {
+    color: #c81853;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 7px 14px;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 1px solid #c81853;
+  }
+
+  @media (hover: hover) {
+    .header-filters__add-filter:hover {
+      color: #fff;
+      background-color: #c81853;
+      text-decoration: none;
+    }
+  }

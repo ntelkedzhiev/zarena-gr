@@ -1,0 +1,354 @@
+<script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+{{ 'collection.css' | asset_url | stylesheet_tag }}
+
+{% if collection.url.size == 0 %}
+  {% assign collection_url = routes.all_products_collection_url %}
+{% else %}
+  {% assign collection_url = collection.url %}
+{% endif %}
+
+{% assign outlet_banner_index = 18 %}
+{% assign outlet_banner_views = 0 %}
+
+{% assign hasActiveFilters = false %}
+{%- for filter in collection.filters -%}
+  {%- for filter_value in filter.active_values -%}
+    {% if collection.filters.size > 0 %}
+    {% assign hasActiveFilters = true %}
+  {% endif %}
+  {%- endfor -%}
+{%- endfor -%}
+
+<div
+  id="CollectionContainer"
+  data-section-type="collection-template"
+  data-collection-url="{{ collection_url }}"
+  data-components="tabs"
+  data-tag-groups-enabled="{% if section.settings.tag_filtering == "tag_groups" %}true{% else %}false{% endif %}"
+  class="{% if section.settings.show_collection_image and collection.image %}header-overlap-section{% endif %}"
+  data-cc-animate
+>
+  {% paginate collection.products by section.settings.products_per_page %}
+    <div class="wide-container">
+      <div class="content transparent">
+        {% if collection.description != blank %}
+          <h1 class="line-1 feature-header collection-header" data-cc-animate>{{ collection.title }}</h1>
+          {% if section.settings.description_position == 'top' %}
+            <div class="line-2 rte" data-cc-animate data-cc-animate-delay="0.2s">
+              {{ collection.description }}
+            </div>
+          {% endif %}
+        {% else %}
+          <h1 class="line-1 feature-header no-margin collection-header" data-cc-animate>{{ collection.title }}</h1>
+        {% endif %}
+      </div>
+    </div>
+    <div data-cc-animate data-cc-animate-delay="0.7s">
+      <div class="wide-container half-gutter {% if section.settings.tag_filtering == "tag_groups" %}cc-product-filter-container{% endif %}">
+        <div class="product-list-container">
+          <div class="product-filters">
+            {% render 'collection-filters', collection: collection %}
+          </div>
+          <div id="ProductGridSection" class="product-grid-section">
+            {% render 'collection-filters-drawer', results: collection %}
+            <div class="active-filters active-facets-desktop">
+            {% if hasActiveFilters == true %}
+              <facet-remove class="active-filters__item-container">
+                <a href="{{ collection.url }}" class="active-filters__clear">{{ "products.filters.clear_all" | t }}</a>
+              </facet-remove>
+            {% else %}
+              {% render 'header-filters', filters: collection.filters %}
+            {% endif %}
+
+            {%- for filter in collection.filters -%}
+              {%- if filter.type == 'price_range' -%}
+                {%- if filter.min_value.value != null or filter.max_value.value != null -%}
+                  <a class="active-filters__remove-filter" href="{{ filter.url_to_remove }}">
+                    {%- assign min_value = filter.min_value.value | default: 0 -%}
+                    {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
+                    {{ min_value | money }} - {{ max_value | money }} X
+                  </a>
+                {%- endif -%}                
+              {%- else -%}
+                {%- for filter_value in filter.active_values -%}
+                  <facet-remove class="active-filters__item-container">
+                    <a class="active-filters__remove-filter" href="{{ filter_value.url_to_remove }}">
+                      {% if filter.type == 'boolean' %}
+                        {% assign snake_case_label = filter.label | replace: ' ', '_' | downcase %}
+                        {% assign namespaced_label = 'products.product.' | append: snake_case_label %}
+                        {{ namespaced_label | t | upcase }} X
+                      {% else %}
+                        {{ filter_value.label | upcase }} X    
+                      {% endif %}
+                    </a>
+                  </facet-remove>
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          {% if collection.metafields.page.promotion_label %}
+            <div class="collection-promotion__label">{{ collection.metafields.page.promotion_label }}</div>
+          {% endif %}
+            <div
+            id="ProductGridContainer"
+              data-section-id="{% if section.id %}{{section.id}}{% endif %}"
+              data-sectionId="{% if section.id %}{{section.id}}{% endif %}"
+              {% if section.blocks %}
+                data-blocks="{ {%- capture blocks_json -%}{% for block in section.blocks %}{%- capture block_json -%}"{{ block.type }}":{{ block.settings | json }}{%- endcapture -%}{{ block_json | prepend: ","  }}{% endfor %}{%- endcapture -%}{{ blocks_json | remove_first: "," }} }"
+              {% endif %}
+              data-settings="{% if section.settings %}{{section.settings | json }}{% endif %}"
+              class="
+                product-list cf
+                product-list--{{ section.settings.layout }}
+                {% if section.settings.grid_mobile == '2' %}mob-two-col{% endif %}
+                {% if section.settings.layout == 'columns' %}jiggly-split dynamic-col-{{ section.settings.grid }}{% else %}grid--uniform{% endif %}
+              "
+              data-result-count="{{ collection.products_count }}"
+            >
+              {% unless collection.products.size > 0 %}
+                <h3 class="align-centre no-results">{{ 'collections.general.no_matches' | t }}</h3>
+              {% endunless %}
+
+              {% if section.settings.layout == 'rows' %}
+                {% if section.settings.grid == 2 %}
+                  {% assign product_class = 'column half' %}
+                {% elsif section.settings.grid == 3 %}
+                  {% assign product_class = 'column third' %}
+                {% else %}
+                  {% assign product_class = 'column quarter' %}
+                {% endif %}
+              {% endif %}
+              {% for product in collection.products %}
+                {% assign index = forloop.index %}
+                {% assign remainer = index | modulo: outlet_banner_index %}
+                {% render 'product-block',
+                  product: product,
+                  product_class: product_class,
+                  i: forloop.index,
+                  show_vendor: section.settings.show_vendor
+                %}
+                {% comment %} {% unless collection.title contains 'Outlet' %}
+                  {% if remainer == 0 %}
+                    {% render 'outlet-banner', outlet_banner_views: outlet_banner_views %}
+                    {% render 'bogus-collection-block' %}
+                    {% render 'bogus-collection-block' %}
+                    {% assign outlet_banner_views = outlet_banner_views | plus: 1 %}
+                  {% endif %}
+                {% endunless %} {% endcomment %}
+              {% endfor %}
+            </div>
+
+            {% comment %}
+              Infinite scroll option:
+
+              By default, more products will load in once you scroll to the bottom of the page.
+
+              Change 'false' to 'true' on the line below to prevent this from happening, and instead show a button at the bottom of the page.
+              Clicking this button will load in the next batch of products.
+            {% endcomment %}
+            {% assign show_scroll_button = false %}
+            {% if paginate.pages > 1 %}
+              <div id="Pagination" class="pagination central small-gap-top content {% if section.settings.enable_infinite_scroll %}infiniscroll{% if show_scroll_button %} wait-for-trigger{% endif %}{% endif %}  transparent">
+                {{ paginate | default_pagination }}
+              </div>
+            {% endif %}
+            
+            {% if collection.handle == 'novi-letni-predlozhenia-25' or collection.handle == 'letni-setove' %}
+              <div class="view-all-products-button-container" data-cc-animate>
+                <a href="/collections/produkti" class="view-all-products-button">Разгледай всички продукти</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% if collection.description != blank and section.settings.description_position == 'bottom' %}
+        <div class="central footer">
+          <div class="content transparent">
+            <div class="rte">
+              {{ collection.description }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  {% endpaginate %}
+</div>
+{% schema %}
+{
+  "name": "Collection pages",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "label": "Show collection image",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "description_position",
+      "label": "Description position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "GRID"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "columns",
+          "label": "Collage"
+        },
+        {
+          "value": "rows",
+          "label": "Grid"
+        }
+      ],
+      "default": "rows",
+      "info": "Collage will only work when the 'Image shape' is set to Natural - in Products / Image shape"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show product vendor",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": "Desktop products per row",
+      "min": 2,
+      "max": 4,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "grid_mobile",
+      "label": "Mobile products per row",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "Products per page",
+      "min": 12,
+      "max": 48,
+      "step": 6,
+      "default": 18
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_infinite_scroll",
+      "label": "Enable infinite-scroll",
+      "default": true,
+      "info": "As visitors scroll down, more products are loaded in automatically."
+    },
+    {
+      "type": "header",
+      "content": "FILTERS"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "label": "Enable sorting",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_in_sort",
+      "label": "Show 'Featured' option in sorting dropdown",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "collapse_sort_by",
+      "label": "Collapse 'Sort by' group",
+      "info": "Applies when 'Tag filtering' is set to 'Tag groups'",
+      "default": false
+    },
+    {
+      "type": "radio",
+      "id": "tag_filtering",
+      "label": "Tag filtering",
+      "default": "simple",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "simple",
+          "label": "Simple"
+        },
+        {
+          "value": "tag_groups",
+          "label": "Tag groups"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Tag groups let you create custom filters for your collections [Learn more](https:\/\/cleancanvas.co.uk\/support\/general\/tag-groups)"
+    }
+  ],
+  "max_blocks": 7,
+  "blocks": [
+    {
+      "type": "tag",
+      "name": "Tag group",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_tag",
+          "label": "Show",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "tags",
+          "label": "Tag list",
+          "info": "Case-sensitive. One per line. Note, these are Tags associated to the product, not variant option names."
+        },
+        {
+          "type": "checkbox",
+          "id": "collapse_tag",
+          "label": "Collapse",
+          "default": false
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

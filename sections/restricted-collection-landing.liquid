@@ -1,0 +1,665 @@
+<div class="restricted-collection-landing central" data-cc-animate data-cc-animate-delay="0.2s">
+  <h1 class="page-heading">
+    <div class="lock-icon-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="#000">
+        <path d="M19 10h-1V7c0-4-3-7-7-7S4 3 4 7v3H3c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V12c0-1.1-.9-2-2-2zm-9 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm4-9H6V7c0-2.8 2.2-5 5-5s5 2.2 5 5v3h-2z"/>
+      </svg>
+    </div>
+    <div class="heading-text">
+      <div class="heading-line-1">ЕКСКЛУЗИВЕН ДОСТЪП</div>
+      <div class="heading-line-2">ОТКЛЮЧИ КОЛЕКЦИЯТА СЕГА</div>
+    </div>
+  </h1>
+  {% comment %}
+    <div class="collection-description">
+      САМО ЗА ИЗБРАНИ КЛИЕНТИ! Разкрийте нашата най-нова колекция преди всички останали.
+    </div>
+  {% endcomment %}
+
+  <div id="restrictedCollectionForm" class="restricted-collection-form">
+    <div id="signupStep" class="form-step active">
+      {% comment %} <p>{{ 'general.restricted_collection.signup_text' | t }}</p> {% endcomment %}
+      <div class="form-field">
+        <input type="email" id="customerEmail" placeholder="{{ 'general.email_placeholder' | t }}" required>
+      </div>
+      <button type="button" id="submitEmail" class="button glow-button" onclick="console.log('Direct click');">
+        {{ 'general.restricted_collection.cta_button' | t }}
+      </button>
+      <div class="limited-time-notice">
+        {{ 'general.restricted_collection.limited_time' | t }}
+      </div>
+    </div>
+
+    <div id="codeStep" class="form-step">
+      <p class="email-sent-message">{{ 'general.restricted_collection.email_sent_message' | t }}</p>
+      <div class="form-field">
+        <label for="accessCode">{{ 'general.restricted_collection.code_label' | t }}</label>
+        <input
+          type="text"
+          id="accessCode"
+          placeholder="{{ 'general.restricted_collection.code_placeholder' | t }}"
+          required
+        >
+      </div>
+      <button type="button" id="submitCode" class="button glow-button">
+        {{ 'general.restricted_collection.code_button_text' | t }}
+      </button>
+      <p id="codeError" class="error-message" style="display: none;">
+        {{ 'general.restricted_collection.code_error_text' | t }}
+      </p>
+      <button type="button" id="backToEmailStep" class="text-button">
+        {{ 'general.restricted_collection.back_to_email' | t | default: 'Enter a different email' }}
+      </button>
+    </div>
+
+    <div id="thankYouStep" class="form-step">
+      <p>{{ 'general.restricted_collection.thank_you_text' | t }}</p>
+      <a href="{{ section.settings.collection_url }}" class="button glow-button" id="viewCollectionBtn">
+        {{- 'general.restricted_collection.view_collection_text' | t -}}
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .restricted-collection-landing {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+  }
+
+  .page-heading {
+    margin: 0 0 25px;
+    animation: float 3s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    flex-wrap: wrap;
+  }
+
+  .lock-icon-wrapper {
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+
+  .heading-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .heading-line-1 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+
+  .heading-line-2 {
+    font-size: 1.2rem;
+    color: #c81853;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .collection-description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #c81853;
+    padding: 0 5px;
+  }
+
+  .limited-time-notice {
+    color: #000;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    display: inline-block;
+    position: relative;
+    padding: 0 5px;
+  }
+
+  .limited-time-notice:before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+  }
+
+  .restricted-collection-form {
+    margin-top: 20px;
+    padding: 25px;
+    border: 2px solid #c81853;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+
+  .form-step {
+    display: none;
+  }
+
+  .form-step.active {
+    display: block;
+  }
+
+  .form-field {
+    margin-bottom: 10px;
+  }
+
+  .form-field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .form-field input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-bottom: 15px;
+  }
+
+  .button {
+    display: inline-block;
+    background-color: #000000;
+    color: #fff;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .glow-button {
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    border: 2px solid #000;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+  }
+
+  .button:hover {
+    background-color: #333333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-color: #333;
+  }
+
+  .error-message {
+    color: #d82c0d;
+    margin-top: 10px;
+  }
+
+  .email-sent-message {
+    color: #2e7d32;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding: 8px 12px;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 5px;
+    border-left: 3px solid #2e7d32;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .success-message {
+    color: #4caf50;
+    font-weight: 600;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 5px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .text-button {
+    background: none;
+    border: none;
+    color: #000;
+    text-decoration: underline;
+    font-size: 0.85rem;
+    padding: 8px 0;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .text-button:hover {
+    color: #666;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get elements
+    const signupStep = document.getElementById('signupStep');
+    const codeStep = document.getElementById('codeStep');
+    const thankYouStep = document.getElementById('thankYouStep');
+    const submitEmailBtn = document.getElementById('submitEmail');
+    const submitCodeBtn = document.getElementById('submitCode');
+    const viewCollectionBtn = document.getElementById('viewCollectionBtn');
+    const emailInput = document.getElementById('customerEmail');
+    const codeInput = document.getElementById('accessCode');
+    const codeError = document.getElementById('codeError');
+
+    console.log('Elements loaded:', {
+      signupStep: !!signupStep,
+      codeStep: !!codeStep,
+      thankYouStep: !!thankYouStep,
+      submitEmailBtn: !!submitEmailBtn,
+      emailInput: !!emailInput,
+    });
+
+    // Collection URL and access code from settings
+    const collectionUrl = '{{ section.settings.collection_url }}';
+    const accessCode = '{{ section.settings.access_code }}';
+
+    // Function to get URL parameters
+    function getParameterByName(name, url = window.location.href) {
+      name = name.replace(/[\[\]]/g, '\\$&');
+      const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Get autocode parameter from URL
+    const autoCode = getParameterByName('autocode');
+
+    // Check if user is already authenticated for this collection
+    const checkAuthentication = () => {
+      const authToken = localStorage.getItem('restrictedCollectionAuth');
+      if (authToken) {
+        try {
+          const authData = JSON.parse(authToken);
+          // Make sure we use consistent authentication logic with restricted-collection.js
+          if (authData.collection === collectionUrl && authData.authenticated) {
+            console.log('User is already authenticated, redirecting to collection');
+            // User is already authenticated, redirect to collection
+            window.location.href = collectionUrl;
+          }
+        } catch (e) {
+          console.log('Invalid auth token found, removing it');
+          // Invalid token, reset it
+          localStorage.removeItem('restrictedCollectionAuth');
+        }
+      }
+    };
+
+    // Run authentication check on page load
+    checkAuthentication();
+
+    // Check if user has previously signed up and what step they're on
+    const savedEmail = localStorage.getItem('customerEmail');
+    const currentStep = localStorage.getItem('restrictedCollectionStep');
+
+    // If user already entered email, show code step directly (unless they explicitly went back)
+    if (savedEmail && currentStep === 'code' && !autoCode) {
+      console.log('User previously signed up with email:', savedEmail);
+      // Show the code step
+      signupStep.classList.remove('active');
+      codeStep.classList.add('active');
+    }
+
+    // Set up back to email button
+    const backToEmailBtn = document.getElementById('backToEmailStep');
+    backToEmailBtn.addEventListener('click', function () {
+      // Show the email step
+      codeStep.classList.remove('active');
+      signupStep.classList.add('active');
+
+      // Update the step in localStorage
+      localStorage.setItem('restrictedCollectionStep', 'email');
+
+      // Clear any previous error messages
+      codeError.style.display = 'none';
+
+      // Reset the code input field
+      codeInput.value = '';
+    });
+
+    // Handle auto-code from URL if present
+    if (autoCode) {
+      console.log('Auto-code detected:', autoCode);
+
+      if (savedEmail) {
+        console.log('User previously signed up with email:', savedEmail);
+
+        // Show the code step
+        signupStep.classList.remove('active');
+        codeStep.classList.add('active');
+
+        // Update step in localStorage
+        localStorage.setItem('restrictedCollectionStep', 'code');
+
+        // Fill in the access code
+        codeInput.value = autoCode;
+
+        // Wait a moment and then submit the code
+        setTimeout(() => {
+          submitCodeBtn.click();
+        }, 500);
+      } else {
+        console.log('Auto-code detected but no email in localStorage, showing signup form first');
+        // Keep showing the signup form, don't auto-fill the code
+        // The code will still be available in the URL when they proceed to the next step
+      }
+    }
+
+    // Add keyboard event to email input for Enter key
+    emailInput.addEventListener('keypress', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        submitEmailBtn.click();
+      }
+    });
+
+    // Handle email submission
+    submitEmailBtn.addEventListener('click', function () {
+      console.log('Button clicked');
+      const email = emailInput.value.trim();
+      console.log('Email value:', email);
+
+      // Email validation with regex
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (email && emailRegex.test(email)) {
+        console.log('Email validation passed');
+        // Save email to localStorage
+        localStorage.setItem('customerEmail', email);
+
+        // Show loading state
+        submitEmailBtn.disabled = true;
+        submitEmailBtn.textContent = '{{ "general.restricted_collection.loading" | t | default: "Processing..." }}';
+
+        // Send email to Klaviyo endpoint
+        fetch('https://api.zarena.bg/klaviyo/collection-signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email: email, collectionHandle: collectionUrl }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+
+            // Identify user in Klaviyo
+            if (window._learnq) {
+              window._learnq.push([
+                'identify',
+                {
+                  $email: email,
+                },
+              ]);
+              console.log('Klaviyo identify event sent');
+            }
+
+            return response.json();
+          })
+          .then((data) => {
+            console.log('Success:', data);
+
+            // Track lead event to Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+              fbq('track', 'Lead', {
+                source: 'restricted_collection',
+              });
+              console.log('FB Lead event sent');
+            }
+
+            // Track lead event using Shopify Customer Events API
+            if (window.Shopify && window.Shopify.analytics && window.Shopify.analytics.publish) {
+              window.Shopify.analytics.publish("submit_form", {
+                formType: "email_signup",
+                formId: "restricted_collection_signup"
+              });
+              console.log('Shopify Customer Events API - Lead event sent');
+            }
+
+            // Track lead event to GA4
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'generate_lead', {
+                source: 'restricted_collection',
+              });
+              console.log('GA4 Lead event sent');
+            }
+
+            // Show code step
+            signupStep.classList.remove('active');
+            codeStep.classList.add('active');
+
+            // Update step in localStorage
+            localStorage.setItem('restrictedCollectionStep', 'code');
+
+            // Check if there was an autoCode parameter in the URL
+            if (autoCode) {
+              // Fill in the code input field
+              codeInput.value = autoCode;
+
+              // Automatically submit after a short delay
+              setTimeout(() => {
+                submitCodeBtn.click();
+              }, 500);
+            }
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+            // Create error message
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent =
+              '{{ "general.restricted_collection.server_error" | t | default: "There was an error processing your request. Please try again." }}';
+
+            // Add error message to form
+            if (!document.querySelector('#signupStep .error-message')) {
+              signupStep.appendChild(errorDiv);
+            }
+
+            // Reset button state
+            submitEmailBtn.disabled = false;
+            submitEmailBtn.textContent = '{{ "general.restricted_collection.cta_button" | t }}';
+          });
+      } else {
+        console.log('Email validation failed');
+        // Add visual feedback
+        emailInput.style.borderColor = 'red';
+        setTimeout(function () {
+          emailInput.style.borderColor = '';
+        }, 2000);
+
+        // Show error message
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.textContent =
+          '{{ "general.restricted_collection.email_error" | t | default: "Please enter a valid email address" }}';
+
+        // Replace existing error or add new one
+        const existingError = signupStep.querySelector('.error-message');
+        if (existingError) {
+          existingError.textContent = errorDiv.textContent;
+        } else {
+          signupStep.appendChild(errorDiv);
+        }
+      }
+    });
+
+    // Handle code submission
+    submitCodeBtn.addEventListener('click', function () {
+      const code = codeInput.value.trim();
+
+      if (code.toLowerCase() === accessCode.toLowerCase()) {
+        // Save authentication status to localStorage (without timestamp)
+        const authData = {
+          collection: collectionUrl,
+          authenticated: true,
+        };
+        localStorage.setItem('restrictedCollectionAuth', JSON.stringify(authData));
+
+        // Show brief success message then redirect
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.textContent = "{{ 'general.restricted_collection.redirecting' | t }}";
+        codeStep.appendChild(successMessage);
+
+        // Add a brief delay before redirect for better UX
+        setTimeout(function () {
+          // Redirect directly to collection
+          window.location.href = collectionUrl;
+        }, 1000);
+      } else {
+        // Show error
+        codeError.style.display = 'block';
+      }
+    });
+
+    // Handle view collection button
+    viewCollectionBtn.addEventListener('click', function (e) {
+      // This link will now work since authentication is stored in localStorage
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Restricted Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "THE NEW COLLECTION IS HERE"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Our exclusive new collection is available only to our subscribers.</p>"
+    },
+    {
+      "type": "text",
+      "id": "signup_text",
+      "label": "Signup text",
+      "default": "Sign up and you will receive your secret access code."
+    },
+    {
+      "type": "text",
+      "id": "signup_button_text",
+      "label": "Signup button text",
+      "default": "Sign Up"
+    },
+    {
+      "type": "text",
+      "id": "code_text",
+      "label": "Code step text",
+      "default": "Enter your access code below to view the exclusive collection."
+    },
+    {
+      "type": "text",
+      "id": "code_label",
+      "label": "Code field label",
+      "default": "Access Code"
+    },
+    {
+      "type": "text",
+      "id": "code_placeholder",
+      "label": "Code field placeholder",
+      "default": "Enter your access code"
+    },
+    {
+      "type": "text",
+      "id": "code_button_text",
+      "label": "Code button text",
+      "default": "Submit"
+    },
+    {
+      "type": "text",
+      "id": "code_error_text",
+      "label": "Invalid code error message",
+      "default": "Invalid access code. Please try again."
+    },
+    {
+      "type": "text",
+      "id": "thank_you_text",
+      "label": "Thank you message",
+      "default": "Thank you! You now have access to our exclusive collection."
+    },
+    {
+      "type": "text",
+      "id": "view_collection_text",
+      "label": "View collection button text",
+      "default": "View Collection"
+    },
+    {
+      "type": "text",
+      "id": "collection_url",
+      "label": "Collection URL",
+      "default": "/collections/nova-kolektsia-prolet-lqto-25"
+    },
+    {
+      "type": "text",
+      "id": "access_code",
+      "label": "Access Code",
+      "default": "IAMSPECIAL",
+      "info": "Code that users must enter to access the collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Restricted Collection",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

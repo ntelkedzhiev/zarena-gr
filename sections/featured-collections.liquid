@@ -1,0 +1,107 @@
+<div class="wide-container half-gutter section-spacing {% if section.settings.alternate_bg_color %}use-alt-bg {% endif %}" data-section-type="featured-collections" data-cc-animate>
+    {% comment %} {%- if section.settings.layout == 'rows' -%}
+        {%- if section.settings.grid == 2 -%}
+          {%- assign product_class = 'column half' -%}
+        {%- elsif section.settings.grid == 3 -%}
+          {%- assign product_class = 'column third' -%}
+        {%- else -%}
+          {%- assign product_class = 'column quarter' -%}
+        {%- endif -%}
+      {%- endif -%} {% endcomment %}
+    {% render 'section-heading', title: section.settings.title %}
+    <div class="flex-wrapped" data-cc-animate>
+        {% for block in section.blocks %}
+            {% render 'collection-tile', collection: block.settings.collection, name: block.settings.collection_name, image: block.settings.placeholder_image, i: forloop.index %}
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured collections",
+  "class": "section-featured-collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured collections"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Backgroud",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": "Desktop products per row",
+      "min": 2,
+      "max": 4,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": "Rows",
+      "min": 1,
+      "max": 4,
+      "default": 2
+    },
+    {
+      "type": "select",
+      "id": "grid_mobile",
+      "label": "Mobile products per row",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "checkbox",
+      "id": "alternate_bg_color",
+      "label": "Use alternate section color",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_info",
+      "name": "Collection",
+      "settings": [
+        {
+          "id": "collection_name",
+          "type": "text",
+          "label": "Collection name"
+        },
+        {
+          "id": "collection",
+          "type": "collection",
+          "label": "Collection"
+        },
+        {
+          "id": "placeholder_image",
+          "type": "image_picker",
+          "label": "Placeholder image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collections",
+      "category": "Collections",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

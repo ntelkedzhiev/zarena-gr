@@ -1,0 +1,31 @@
+{% assign remainer = outlet_banner_views | modulo: 2 %}
+{% if remainer == 0 %}
+  {% assign is_even = true %}
+{% else %}
+  {% assign is_even = false %}
+{% endif %}
+
+<div class="outlet-overlapping-banner product-block column">
+  <a style="height: 100%; width: 100%" href="/collections/outlet-do-50">
+    {% if is_even %}
+      <img
+        class="desktop-only"
+        src="https://cdn.shopify.com/s/files/1/0573/1565/5835/files/outlet-banner-column-width-3.jpg"
+      >
+      <img
+        class="mobile-only"
+        src="https://cdn.shopify.com/s/files/1/0573/1565/5835/files/outlet-banner-column-width-2.jpg"
+      >
+    {% else %}
+      <img
+        class="desktop-only"
+        src="https://cdn.shopify.com/s/files/1/0573/1565/5835/files/outlet-banner2-column-width-3.jpg"
+      >
+      <img
+        class="mobile-only"
+        src="https://cdn.shopify.com/s/files/1/0573/1565/5835/files/outlet-banner2-column-width-2.jpg"
+      >
+    {% endif %}
+  </a>
+  {% comment %} <img> {% endcomment %}
+</div>

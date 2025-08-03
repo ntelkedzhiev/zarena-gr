@@ -1,0 +1,1141 @@
+{% comment %} Product grid container {% endcomment %}
+{% assign collection_handle = product.metafields.custom.collection_handle %}
+{% assign collection = collections[collection_handle] %}
+
+{% assign price = product.price %}
+{% assign compare_at_price = product.compare_at_price %}
+
+{% if price >= 10000 %}
+  {% assign free_shipping = true %}
+{% else %}
+  {% assign free_shipping = false %}
+{% endif %}
+
+{% assign product_price = product.price %}
+{% assign cart_subtotal = cart.total_price %}
+{% assign progressive_discount_feature = product.metafields.promotions.progressive_discount %}
+
+{% comment %} Check if cart contains this product and only "add it" to the total price if it doesn't {% endcomment %}
+{% assign product_in_cart = false %}
+{% for item in cart.items %}
+  {% if item.product.id == product.id %}
+    {% assign product_in_cart = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% if product_in_cart %}
+  {% assign total_price = cart_subtotal %}
+{% else %}
+  {% assign total_price = product_price | plus: cart_subtotal %}
+{% endif %}
+
+<div class="product-page">
+  <div class="product-grid">
+    <div class="product-single__info hidden-desktop">
+      <h1 class="product-single__title">{{ product.title }}</h1>
+      <div class="product-single__price-wrapper">
+        <span class="mobile-price product-single__price">
+          {%- if product.compare_at_price > product.price -%}
+            <del>{{ product.compare_at_price | money }}</del>
+          {%- endif -%}
+          {{- product.price | money -}}
+          {% if product.metafields.custom.special_discount_code %}
+            {% assign multiplier = 100 | minus: product.metafields.custom.special_discount_code.value.percentage %}
+            <div class="special-price__label hidden-desktop">
+              {{ product.price | times: multiplier | times: 0.01 | money }} {{ 'product.with_code' | t }}
+              {{ product.metafields.custom.special_discount_code.value.name }}
+            </div>
+            <div class="special-discount-code-used__label" >{{ 'product.code_usage_notice' | t }}</div>
+          {% endif %}
+        </span>
+      </div>
+      {% if section.settings.show_urgency_label and product.compare_at_price > product.price %}
+        <div class="product__promotion-urgency-label"></div>
+      {% endif %} 
+      <a href="#looxReviews">
+        <div
+          class="loox-rating"
+          data-id="{{ product.id }}"
+          data-rating="{{ product.metafields.loox.avg_rating }}"
+          data-raters="{{ product.metafields.loox.num_reviews }}"
+        ></div>
+      </a>
+    </div>
+    <div class="product-single__image-container">
+      {% comment %} Product main image {% endcomment %}
+      {% assign featured_image = product.selected_or_first_available_variant.featured_media
+        | default: product.featured_media
+      %}
+      <div class="product-single__photo-wrapper">
+        {% if compare_at_price > price %}
+          <div class="lowest-price-label">{{ 'product.lowest_price_season' | t }}</div>
+        {% endif %}
+        <a
+          id="product-featured-image-fancybox"
+          href="{{ featured_image | img_url: '2048x2048' }}"
+          data-image-id="{{ featured_image.id }}"
+          data-fancybox="featured_image"
+        >
+          <img
+            src="{{ featured_image | img_url: '1024x1024' }}"
+            alt="{{ featured_image.alt | escape }}"
+            id="product-featured-image"
+          >
+        </a>
+        <button class="product-image-nav prev-image" aria-label="Previous image">
+          {% render 'svg-larrow' %}
+        </button>
+        <button class="product-image-nav next-image" aria-label="Next image">
+          {% render 'svg-rarrow' %}
+        </button>
+      </div>
+      {% comment %} End of product main image {% endcomment %}
+
+      {% comment %} Product thumbnail images using SwiperJS {% endcomment %}
+
+      <div class="thumbnails-wrapper">
+        <div class="product-single__thumbnails">
+          {% for media in product.media %}
+            <div class="thumbnail-item">
+              <a
+                href="{{ media | img_url: '1024x1024' }}"
+                class="product-single__thumbnail"
+                data-image-id="{{ media.id }}"
+              >
+                <img
+                  src="{{ media | img_url: '100x100' }}"
+                  alt="{{ media.alt | escape }}"
+                  class="product-single__thumbnail-image"
+                >
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% comment %} End of product thumbnail images using SwiperJS {% endcomment %}
+    </div>
+
+    <div class="product-single__info">
+      {% comment %} Product title, price {% endcomment %}
+      <div class="hidden-mobile">
+        <h1 class="product-single__title">{{ product.title }}</h1>
+        <div class="product-single__price-wrapper">
+          <span class="desktop-price product-single__price">
+            {%- if product.compare_at_price > product.price -%}
+              <del>{{ product.compare_at_price | money }}</del>
+            {%- endif -%}
+            {{- product.price | money -}}
+          </span>
+          {% if product.metafields.custom.special_discount_code %}
+            {% assign multiplier = 100 | minus: product.metafields.custom.special_discount_code.value.percentage %}
+            <div class="special-price__label hidden-mobile">
+              {{ product.price | times: multiplier | times: 0.01 | money }} {{ 'product.with_code' | t }}
+              {{ product.metafields.custom.special_discount_code.value.name }}
+            </div>
+          {% endif %}
+        </div>
+        {% if product.metafields.custom.special_discount_code %}
+          <div class="special-discount-code-used__label" >*Повече от 40 клиента използваха този код в последните 24ч.</div>
+        {% endif %}
+        {% if section.settings.show_urgency_label and product.compare_at_price > product.price %}
+          <div class="product__promotion-urgency-label"></div>
+        {% endif %} 
+        <a href="#looxReviews">
+          <div
+            class="loox-rating"
+            data-id="{{ product.id }}"
+            data-rating="{{ product.metafields.loox.avg_rating }}"
+            data-raters="{{ product.metafields.loox.num_reviews }}"
+            style="margin-bottom:15px"
+          ></div>
+        </a>
+        <loox-snippets-widget product-id="{{ product.id }}"></loox-snippets-widget>
+      </div>
+
+      {% if product.variants.size > 1 %}
+        <div class="variant-products__title">{{ 'product.size' | t }}:</div>
+        <select
+          id="variant-select"
+          class="original-variant-selector"
+          aria-label="{{ 'products.product.selector_label' | t | escape }}"
+        >
+          {% for variant in product.variants %}
+            <option
+              value="{{ variant.id }}"
+              {% if variant == product.selected_or_first_available_variant %}
+                selected="selected"
+              {% endif %}
+              {% if section.settings.show_inventory_notice
+                and variant.inventory_management == 'shopify'
+                and variant.inventory_quantity > 0
+              %}
+                {% if section.settings.inventory_notice_threshold == 0
+                  or variant.inventory_quantity <= section.settings.inventory_notice_threshold
+                %}
+                  data-inventory="{{ variant.inventory_quantity }}"
+                {% endif %}
+              {% endif %}
+              data-stock="{% if variant.inventory_management == 'shopify' and variant.inventory_quantity <= 0 %}out{% endif %}"
+            >
+              {{ variant.title | escape }}
+            </option>
+          {% endfor %}
+        </select>
+      {% endif %}
+      {% if product.metafields.content.video_desktop %}
+        <div id="play-video-button-container">
+          <button id="play-video-btn" class="button">
+            {% render 'svg-play2' %}
+            {{ 'product.watch_video_review' | t }}
+          </button>
+          <!-- Video Modal -->
+          <div id="video-modal" class="video-modal" style="display:none;">
+            <div class="hidden-mobile">
+              {{ product.metafields.content.video_desktop.value | video_tag: controls: true }}
+            </div>
+            <div class="hidden-desktop">
+              {{ product.metafields.content.video_mobile.value | video_tag: controls: true }}
+            </div>
+            <button id="close-video-btn">{{ 'product.close' | t }}</button>
+          </div>
+        </div>
+      {% endif %}
+      {% comment %} Display products with the "Модел: Zoe" tag {% endcomment %}
+      {% if collection.products.size > 0 %}
+        <div class="variant-products">
+          <div class="variant-products__title">{{ 'product.colors' | t }}:</div>
+          <div class="variant-product-grid">
+            {% for product in collection.products %}
+              {% render 'product-variant', product: product %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+      <div data-rebuy-id="77732" data-rebuy-shopify-product-ids="{{ product.id }}"></div>
+      {% comment %} End of product title, price, and free shipping label {% endcomment %}
+
+      {% comment %} Product variant options and add to cart button {% endcomment %}
+      <form
+        method="post"
+        action="/cart/add"
+        class="product-single__form feedback-add_in_modal"
+        id="product-form"
+        data-ajax-add-to-cart="true"
+      >
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <input type="hidden" id="product-quantity" name="quantity" value="1">
+        <input type="hidden" value="/cart" name="redirectTo">
+
+        <div class="selling-points">
+            {{ 'product.with_this_product_you_get' | t }}:
+            {% comment %} {% if free_shipping %}
+             
+            {% endif %} {% endcomment %}
+            {% if progressive_discount_feature %}
+              <div class="progressive-discount-container selling-point colored">
+                <img class="selling-point--icon" width="34" height="34" src="{{ 'sale-icon-full-colored.png' | asset_url }}" alt="Free shipping icon"></img>
+                {% if total_price >= 35000 %}
+                  <div>
+                    <span class="discount-20">{{ 'product.exclusive_discount_20' | t }}</span>
+                  </div>
+                {% elsif total_price >= 20000 %}
+                  {%  assign remaining_to_next_discount =  35000 | minus: total_price |  money %}
+                  <div>
+                    {% comment %} {{remaining_to_next_discount}} {% endcomment %}
+                    <span class="discount-10">{{ 'product.discount_10_message' | t }}</span>
+                  </div>
+                {% else %}
+                  <div>
+                    <span class="no-discount"
+                      >{{ 'product.special_discount_message' | t }}</span
+                    >
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            <div class="selling-point">
+                <img class="selling-point--icon" width="34" height="34" src="{{ 'free-shipping-icon.png' | asset_url }}" alt="Free shipping icon"></img>
+                <a href="{{ shop.shipping_policy.url }}" class="product-single__free-shipping"
+                  >{{ 'product.free_shipping' | t }}</a
+                >
+              </div>
+              {% if product.variants[0].id != 55017097625979 and product.metafields.custom.presale.value != true %}
+                <div class="selling-point">
+                  <img class="selling-point--icon" width="34" height="34" src="{{ 'gift-box.png' | asset_url }}" alt="Best price icon"></img>
+                  <span>{{ 'product.gift_phone_case' | t }}</span>
+                </div>
+              {% endif %}
+            {% if compare_at_price > price %}
+              <div class="selling-point bordered" style="font-size: 14px">
+                <img class="selling-point--icon" width="34" height="34" src="{{ 'hot-sale-icon.png' | asset_url }}" alt="Best price icon"></img>
+                <span>{{ 'product.best_price_season' | t }}</span>
+              </div>
+            {% endif %}
+            {% comment %}
+              {% if price >= 100 or compare_at_price >= 100 and compare_at_price > price %}
+                <a href="{{ shop.shipping_policy.url }}" class="selling-point product-single__free-shipping"
+                  >Безплатна доставка над 100лв.</a
+                >
+              {% endif %}
+            {% endcomment %}
+            {% comment %}
+              {%- if shop.shipping_policy.body != blank -%}
+                {{ 'products.general.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+              {%- endif -%}
+            {% endcomment %}
+            <span class="selling-point product-single__availability">
+              {% comment %}
+                {% if product.available %}
+                  <i class="icon icon-check-circle"></i> <span class="in-stock">In Stock</span>
+                {% else %}
+                  <i class="icon icon-times-circle"></i> <span class="out-of-stock">Out of Stock</span>
+                {% endif %}
+              {% endcomment %}
+            </span>
+        </div>
+        {% comment %} Do not show buttons for gift items {% endcomment %}
+        {% if price > 0 %}
+          {% if product.metafields.custom.presale and product.metafields.custom.presale.value == true %}
+            <button
+              type="button"
+              class="button product-single__add-to-cart"
+              id="pre-sale-button"
+              data-product-title="{{ product.title | escape }}"
+              data-product-id="{{ product.id }}"
+              data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+              data-product-handle="{{ product.handle }}"
+              data-product-image="{{ product.featured_image | img_url: 'medium' }}"
+              style="background-color: #c81853; border-color: #c81853;"
+            >
+              {{ 'products.product.pre_sale_button' | t }}
+              {% if progressive_discount_feature and total_price > 20000 %}
+                <div class="desktop-only" style="color: white; font-size: 15px; text-transform:lowercase;">
+                  {{ 'product.with_discount_included' | t }}
+                </div>
+              {% endif %}
+            </button>
+            <div style="text-align: center;">
+              <span class="chance-notice">
+                {{ 'products.product.now_is_your_chance' | t }}
+              </span>
+            </div>
+          {% else %}
+            <button
+              {% unless product.available %}
+                disabled
+              {% endunless %}
+              type="submit"
+              class="button product-single__add-to-cart"
+              style="background-color: #c81853; border-color: #c81853;"
+            >
+              {% if product.available %}
+                {{ 'products.product.add_to_cart' | t }}
+              {% else %}
+                {{ 'products.listing.sold_out' | t }}
+              {% endif %}
+              {% if progressive_discount_feature and total_price > 20000 %}
+                <div class="desktop-only discount-text" style="font-size: 15px; text-transform:lowercase; margin-top: 4px">
+                  {{ 'product.with_discount_included' | t }}
+                </div>
+              {% endif %}
+            </button>
+          {% endif %}
+          {% assign loan_value = product_price |  divided_by: 3 | money_without_currency %}
+          {% if product.metafields.custom.special_discount_code %}
+            {% assign multiplier = 100 | minus: product.metafields.custom.special_discount_code.value.percentage %}
+            {% assign price_with_discount =  product_price | times: multiplier | times: 0.01 %}
+            {% assign loan_value = price_with_discount |  divided_by: 3 | money_without_currency %}
+          {% endif %}
+          {% if total_price > 10000 and product.available and product.metafields.custom.presale.value != true %}
+            <button class="tbi_button_container2" id="tbi_button_container">
+              <div class="tbi_button2" id="tbi_button">
+                <div class="tbi_button_body2" id="tbi_button_body">
+                  <div class="tbi_button_line">{{ 'product.buy_for_amount_per_month' | t: amount: loan_value }}</div>
+                  <div class="tbi_button_line">{{ 'product.three_months_no_markup' | t }}<img loading="lazy" src="https://cdn.tbibank.support/logo/tbi-bank-white.svg"  alt="tbi bank logo" width="89" height="40" class="tbi_button_logo2"></div>
+                </div>
+              </div>
+            </button>
+          {% endif %}
+        {% endif %}
+        {% if product.metafields.custom.preorder == true %}
+          <div class="selling-point">PREORDER</div>
+        {% endif %}
+      </form>
+      <div id="info-modal" class="info-modal" style="display: none;">
+        <div class="info-modal-content">
+            <p>{{ 'product.added_to_cart' | t }}</p>
+            <p><strong>{{ 'product.complete_order_tbi' | t }}</strong></p>
+            <p style="font-size: 12px">{{ 'product.payment_schedule_note' | t }}</p>
+            <div class="modal-buttons">
+              <button id="info-modal-close" class="button">{{ 'product.close' | t }}</button>
+              <button id="info-modal-checkout" class="button">{{ 'product.complete' | t }}</button>
+            </div>
+        </div>
+      </div>
+      <div class="hidden-desktop" style="margin-top: 12px">
+        <loox-snippets-widget product-id="{{ product.id }}"></loox-snippets-widget>
+      </div>
+
+      {% comment %} End of product variant options and add to cart button {% endcomment %}
+      {% comment %} Product description {% endcomment %}
+      <div class="product-single__description">
+        {% render 'product-features', product: product %}
+      </div>
+      {% comment %} End of product description {% endcomment %}
+    </div>
+  </div>
+  {% if product.metafields.custom.real_life_image_1
+    or product.metafields.custom.real_life_image_2
+    or product.metafields.custom.real_life_image_3
+  %}
+    <div class="ugc-block">
+      <h4>{{ 'product.click_to_enlarge' | t }}</h4>
+      <div class="ugc-grid">
+        {% if product.metafields.custom.real_life_image_1 %}
+          <div class="ugc-item">
+            <a
+              href="{{ product.metafields.custom.real_life_image_1 | img_url: 'master' }}"
+              data-fancybox="ugc-gallery"
+              data-title="User caption"
+            >
+              <img
+                src="{{ product.metafields.custom.real_life_image_1 | img_url: '600x' }}"
+                alt="Thumbnail description"
+              >
+              {% comment %}
+                <div class="zoom-icon">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              {% endcomment %}
+            </a>
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.real_life_image_2 %}
+          <div class="ugc-item">
+            <a
+              href="{{ product.metafields.custom.real_life_image_2 | img_url: 'master' }}"
+              data-fancybox="ugc-gallery"
+              data-title="User caption"
+            >
+              <img
+                src="{{ product.metafields.custom.real_life_image_2 | img_url: '600x' }}"
+                alt="Thumbnail description"
+              >
+              {% comment %}
+                <div class="zoom-icon">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              {% endcomment %}
+            </a>
+          </div>
+        {% endif %}
+        {% if product.metafields.custom.real_life_image_3 %}
+          <div class="ugc-item">
+            <a
+              href="{{ product.metafields.custom.real_life_image_3 | img_url: 'master' }}"
+              data-fancybox="ugc-gallery"
+              data-title="User caption"
+            >
+              <img
+                src="{{ product.metafields.custom.real_life_image_3 | img_url: '600x' }}"
+                alt="Thumbnail description"
+              >
+              {% comment %}
+                <div class="zoom-icon">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              {% endcomment %}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% comment %} Product-specific Instagram posts {% endcomment %}
+  {% assign product_instagram_posts = product.metafields.custom.instagram_posts.value %}
+  {% if product_instagram_posts and product_instagram_posts != blank %}
+    <section class="instagram-section product-instagram-section">
+      <h2>{{ 'product.seen_on_instagram' | t }}</h2>
+      <div class="instagram-posts product-instagram-posts">
+        {% for post_data in product_instagram_posts %}
+          {% assign post_id = '' %}
+          
+          {% comment %} Extract post ID from Instagram URL if full URL is provided {% endcomment %}
+          {% if post_data contains 'instagram.com/p/' %}
+            {% assign url_parts = post_data | split: '/p/' %}
+            {% if url_parts.size > 1 %}
+              {% assign post_id_part = url_parts[1] | split: '/' | first | split: '?' | first %}
+              {% assign post_id = post_id_part %}
+            {% endif %}
+          {% else %}
+            {% comment %} Assume it's just the post ID {% endcomment %}
+            {% assign post_id = post_data %}
+          {% endif %}
+          
+          {% if post_id != blank %}
+            <div class="instagram-post">
+              {% render 'instagram-post', post_id: post_id %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  {% elsif collection.metafields.custom.instagram_post1 or collection.metafields.custom.instagram_post2 %}
+    {% comment %} Fallback to collection-level Instagram posts {% endcomment %}
+    <section class="instagram-section hidden-desktop">
+      <h2>{{ 'product.seen_on_instagram' | t }}</h2>
+      <div class="instagram-posts">
+        {% if collection.metafields.custom.instagram_post1 %}
+          <div class="instagram-post">
+            {% render 'instagram-post', post_id: collection.metafields.custom.instagram_post1 %}
+          </div>
+        {% endif %}
+        {% if collection.metafields.custom.instagram_post2 %}
+          <div class="instagram-post">
+            {% render 'instagram-post', post_id: collection.metafields.custom.instagram_post2 %}
+          </div>
+        {% endif %}
+        <!-- Add more Instagram posts as needed -->
+      </div>
+    </section>
+  {% endif %}
+
+  <div
+    id="looxReviews"
+    style="max-width:none;margin-left:24px;margin-right:24px"
+    data-product-id="{{ product.id }}"
+    class="loox-reviews-default"
+  >
+    {{ product.metafields.loox.reviews }}
+  </div>
+
+  <div data-rebuy-id="79760" data-rebuy-shopify-product-ids="{{ product.id }}"></div>
+  <div data-rebuy-id="79747" data-rebuy-shopify-product-ids="{{ product.id }}"></div>
+
+  {% if product.available %}
+    <div class="sticky-buttons">
+      {% if product.metafields.custom.presale.value == true %}
+        <button
+          id="sticky-pre-sale-button"
+          class="add-to-cart product-area__add-to-cart-xs button"
+          data-product-title="{{ product.title | escape }}"
+          data-product-id="{{ product.id }}"
+          data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+          data-product-handle="{{ product.handle }}"
+          data-product-image="{{ product.featured_image | img_url: 'medium' }}"
+        >
+          <span style="padding-right: 35px;">{{ 'products.product.pre_sale_button' | t }}</span>
+          <div class="cart-icon--basket2" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%);">
+            {% render 'svg-cart2' %}
+          </div>
+          {% if progressive_discount_feature and total_price > 20000 %}
+            <div style="color: #c81853; font-size: 15px; text-transform:lowercase;">
+              с включена отстъпка
+            </div>
+          {% endif %}
+        </button>
+      {% else %}
+        <button
+          id="sticky-add-to-cart"
+          class="add-to-cart product-area__add-to-cart-xs button"
+        >
+          {% if product.price < product.compare_at_price %}
+            {% assign discount_value = product.compare_at_price | minus: product.price %}
+            <div style="color: #c81853; font-size: 15px; margin-bottom: 5px">
+              {{ 'products.product.save' | t }}
+              {{ discount_value | money }}
+              {{ 'general.now' | t | upcase }}!
+            </div>
+          {% endif %}
+          <span>{{ 'products.product.add_to_cart' | t }}</span>
+          <div class="cart-icon--basket2" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%);">
+            {% render 'svg-cart2' %}
+          </div>
+          {% if progressive_discount_feature and total_price > 20000 %}
+            <div style="color: #c81853; font-size: 15px; text-transform:lowercase; text-align: center; margin: 0 auto; margin-top:2px; width: 100%;">
+              с включена отстъпка
+            </div>
+          {% endif %}
+        </button>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var _learnq = window._learnq || [];
+
+    var infoModal = document.getElementById('info-modal');
+    var modalClose = document.getElementById('info-modal-close');
+    var checkoutButton = document.getElementById('info-modal-checkout');
+
+
+    function showInfoModal() {
+      infoModal.style.display = 'flex';
+    }
+
+    // Example: Using the add-to-cart button's simulated AJAX callback.
+    var tbiButton = document.getElementById('tbi_button_container');
+    if (tbiButton) {
+      tbiButton.addEventListener('click', function () {
+        // Simulate a successful add-to-cart event (use your actual AJAX callback here)
+        setTimeout(showInfoModal, 500);
+      });
+    }
+
+    modalClose.addEventListener('click', function () {
+      infoModal.style.display = 'none';
+    });
+
+    infoModal.addEventListener('click', function (event) {
+      // If the user clicks directly on the modal (background), not its children
+      if (event.target === infoModal) {
+        infoModal.style.display = 'none';
+      }
+    });
+    
+    checkoutButton.addEventListener('click', function () {
+      // Redirect to the checkout page
+      window.location.href = '/checkout';
+    });
+
+    var playVideoBtn = document.getElementById('play-video-btn');
+    if (playVideoBtn) {
+      var videoModal = document.getElementById('video-modal');
+      var closeVideoBtn = document.getElementById('close-video-btn');
+      const productVideos = videoModal.getElementsByTagName('video');
+      const header = document.getElementById('site-control');
+
+      // Show modal and play video
+      playVideoBtn.addEventListener('click', function () {
+        header.style.display = 'none';
+        videoModal.style.display = 'flex';
+        if (window.innerWidth <= 767 && productVideos[1]) {
+          productVideos[1].play();
+        } else {
+          productVideos[0].play();
+        }
+
+        _learnq.push(['track', 'Watched video', item]);
+      });
+
+      // Close modal and stop video
+      closeVideoBtn.addEventListener('click', function () {
+        header.style.display = 'block';
+        videoModal.style.display = 'none';
+
+        [...productVideos].forEach((video) => {
+          video.pause(); // Pauses the video
+          video.currentTime = 0; // Seek to start
+        });
+      });
+    }
+
+    // const url = window.location.pathname;
+    // let promoCode = getPromoCodeFromUrl() || getPromoCodeFromLocalStorage();
+    // if (promoCode && !url.includes('outlet')) {
+    //   const isVip = promoCode.indexOf('VIP') !== -1;
+    //   if (isVip) {
+    //     const promoCodeMatch = Object.keys(promoCodesByProductId).find((key) => {
+    //       const productIds = promoCodesByProductId[key];
+    //       return productIds.includes({{ product.id }});
+    //     });
+
+    //     if (promoCodeMatch) {
+    //       promoCode = promoCodeMatch;
+    //     } else {
+    //       return;
+    //     }
+    //   } else {
+    //     // TODO: Check if the promo code is valid
+    //     return;
+    //   }
+
+    //   const existingDiscountElements = document.getElementsByClassName('special-price__label');
+    //   const elementsArray = existingDiscountElements ? Array.from(existingDiscountElements) : [];
+    //   for (let i = 0; i < elementsArray.length; i++) {
+    //     const element = elementsArray[i];
+    //     element.remove();
+    //   }
+
+    //   const mobileParentElement = document.querySelector('.mobile-price.product-single__price');
+
+    //   const productPriceStr = mobileParentElement.textContent || mobileParentElement.innerText;
+    //   const productPrice = parseFloat(productPriceStr.replace(/[^\d.]/g, ''));
+
+    //   // Calculate the discount
+    //   const discountPercentage = promoCode.slice(-2) || 20;
+    //   const multiplier = 1 - discountPercentage / 100;
+    //   const discountedPrice = productPrice * multiplier;
+
+    //   // Format the discounted price as money (adapt this to match your site's currency formatting)
+    //   const discountedPriceFormatted = new Intl.NumberFormat('bg-BG', { style: 'currency', currency: 'BGN' }).format(
+    //     discountedPrice
+    //   );
+
+    //   const discountElement = document.createElement('div');
+    //   discountElement.classList.add('special-price__label', 'hidden-desktop');
+    //   discountElement.textContent = `${discountedPriceFormatted} с код ${promoCode}`;
+
+    //   mobileParentElement.appendChild(discountElement);
+
+    //   const discountElementDesktop = document.createElement('div');
+    //   discountElementDesktop.classList.add('special-price__label', 'hidden-mobile');
+    //   discountElementDesktop.textContent = `${discountedPriceFormatted} с код ${promoCode}`;
+    //   const desktopElement = document.querySelector('.desktop-price.product-single__price');
+    //   desktopElement.parentNode.appendChild(discountElementDesktop);
+    // }
+
+    var thumbnails = document.querySelectorAll('.product-single__thumbnail');
+    var currentImageIndex = 0;
+    thumbnails[0].children[0].classList.add('selected');
+
+    // Function to update the main image
+    function updateMainImage(index) {
+      if (index < 0) {
+        index = thumbnails.length - 1;
+      } else if (index >= thumbnails.length) {
+        index = 0;
+      }
+      
+      currentImageIndex = index;
+      const thumbnail = thumbnails[index];
+      const imageSource = thumbnail.getAttribute('href');
+      const imageAlt = thumbnail.children[0].alt;
+
+      const mainImage = document.getElementById('product-featured-image');
+      mainImage.src = imageSource;
+      mainImage.alt = imageAlt;
+
+      const fancyboxImage = document.getElementById('product-featured-image-fancybox');
+      fancyboxImage.href = imageSource;
+      fancyboxImage.setAttribute('data-image-id', thumbnail.getAttribute('data-image-id'));
+
+      // Remove the 'selected' class from all thumbnails
+      thumbnails.forEach(function (thumb) {
+        thumb.children[0].classList.remove('selected');
+      });
+
+      // Add the 'selected' class to the current thumbnail
+      thumbnail.children[0].classList.add('selected');
+    }
+
+    // Add click event to thumbnails
+    thumbnails.forEach(function (thumbnail, index) {
+      thumbnail.addEventListener('click', function (event) {
+        event.preventDefault();
+        updateMainImage(index);
+      });
+    });
+    
+    // Add navigation buttons functionality
+    const prevButton = document.querySelector('.product-image-nav.prev-image');
+    const nextButton = document.querySelector('.product-image-nav.next-image');
+    
+    prevButton.addEventListener('click', function() {
+      updateMainImage(currentImageIndex - 1);
+    });
+    
+    nextButton.addEventListener('click', function() {
+      updateMainImage(currentImageIndex + 1);
+    });
+
+    const hiddenInput = document.querySelector('[name="id"]');
+    const variantSelector = document.querySelector('#variant-select');
+    if (variantSelector) {
+      variantSelector.addEventListener('change', function (event) {
+        hiddenInput.setAttribute('value', event.currentTarget.value);
+      });
+    }
+
+    // const stickyBuyNowButton = document.getElementById('sticky-buy-now');
+    // stickyBuyNowButton.addEventListener('click', function () {
+    //   const variantId = document.querySelector('[name="id"]').value;
+    //   const quantity = document.querySelector('[name="quantity"]').value;
+    //   addItemToCart(variantId, quantity)
+    //     .then(function () {
+    //       location.href = theme.routes.checkout;
+    //     })
+    //     .catch(function (error) {
+    //       console.error('Error adding item to cart:', error);
+    //     });
+    // });
+
+    $(document).ready(function () {
+      const $productForm = $('#product-form');
+      theme.applyAjaxToProductForm($productForm);
+    });
+
+    const $addToCartButton = $('#sticky-add-to-cart');
+    $addToCartButton.on('click', function (e) {
+      e.preventDefault(); // Prevent the default button behavior
+      $('#product-form').submit(); // Trigger the form submission
+    });
+    
+    // Handle Pre-sale button clicks
+    const preSaleButton = document.getElementById('pre-sale-button');
+    const stickyPreSaleButton = document.getElementById('sticky-pre-sale-button');
+    
+    function handlePreSaleClick(event) {
+      event.preventDefault();
+      
+      const button = event.currentTarget;
+      const productData = {
+        Title: button.dataset.productTitle,
+        ItemId: button.dataset.variantId,
+        ProductID: button.dataset.productId, 
+        SKU: "",
+        Categories: [],
+        ImageURL: button.dataset.productImage,
+        URL: window.location.href,
+        Brand: {{ shop.name | json }},
+        Price: {{ product.price | divided_by: 100.0 | json }},
+        CompareAtPrice: {{ product.compare_at_price | divided_by: 100.0 | json }}
+      };
+      
+      // Facebook Pixel tracking - AddToCart
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'AddToCart', {
+          content_name: productData.Title,
+          content_ids: [productData.ProductID],
+          content_type: 'product',
+          value: productData.Price,
+          currency: 'BGN'
+        });
+        console.log('FB AddToCart event sent for pre-sale button');
+      }
+      
+      // Shopify Customer Events API - custom presale_product_added event
+      if (window.Shopify && window.Shopify.analytics && window.Shopify.analytics.publish) {
+        window.Shopify.analytics.publish("presale_product_added", {
+          variantId: productData.VariantID,
+          productId: productData.ProductID,
+          name: productData.Title,
+          price: productData.Price,
+          currency: "BGN",
+          quantity: 1
+        });
+        console.log('Shopify Customer Events API - presale_product_added event sent');
+      }
+      
+      // GA4 tracking - add to wishlist
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'presale_product_add', {
+          currency: 'BGN',
+          value: productData.Price,
+          items: [{
+            item_id: productData.ProductID,
+            item_name: productData.Title,
+            price: productData.Price
+          }]
+        });
+        console.log('GA4 presale_product_add event sent for pre-sale button');
+      }
+      
+      // Send event to Klaviyo
+      if (window._learnq) {
+        // First check if we have customer email (either from Shopify or localStorage)
+        let customerEmail = '';
+        
+        if (window.Shopify && window.Shopify.customer && window.Shopify.customer.email) {
+          // If user is logged in, use their Shopify account email
+          customerEmail = window.Shopify.customer.email;
+        } else {
+          // Check localStorage for previously stored email
+          customerEmail = localStorage.getItem('customerEmail');
+        }
+
+        // Identify
+        if (customerEmail) {
+          window._learnq.push(['identify', {
+            $email: customerEmail
+          }]);
+        }
+        
+        // Include email in the productData if available
+        if (customerEmail) {
+          productData.$email = customerEmail;
+        }
+        
+        // Track the "Presale product added" event
+        console.log('Sending Presale product added event to Klaviyo');
+        window._learnq.push(["track", "Presale product added", productData]);
+        
+        // Check if pre-sale modal already exists, if not create it
+        let preSaleModal = document.getElementById('pre-sale-modal');
+        
+        if (!preSaleModal) {
+          // Create the modal element
+          preSaleModal = document.createElement('div');
+          preSaleModal.id = 'pre-sale-modal';
+          preSaleModal.classList.add('modal');
+          
+          // Create the modal content
+          preSaleModal.innerHTML = `
+            <div class="modal-content">
+              <span class="modal-close">&times;</span>
+              <h3>{{ 'products.product.pre_sale_success_title' | t }}</h3>
+              <p>{{ 'products.product.pre_sale_success_message' | t }}</p>
+              <div class="modal-footer">
+                <button id="pre-sale-continue" class="pre-sale-continue-button">{{ 'products.product.pre_sale_continue_shopping' | t }}</button>
+              </div>
+            </div>
+          `;
+          
+          // Add styles to the modal
+          const modalStyle = `
+            <style>
+              #pre-sale-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+              }
+              
+              #pre-sale-modal .modal-content {
+                background: #fff;
+                border: 1px solid black;
+                padding: 24px;
+                border-radius: 10px;
+                width: 80%;
+                max-width: 400px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+                text-align: center;
+              }
+              
+              #pre-sale-modal .modal-close {
+                color: #000;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+              }
+              
+              #pre-sale-modal .modal-footer {
+                margin-top: 20px;
+              }
+              
+              #pre-sale-modal h3 {
+                margin-top: 10px;
+                font-weight: bold;
+                color: #c81853;
+              }
+              
+              #pre-sale-modal p {
+                font-size: 16px;
+                color: #423f3f;
+                margin: 20px 0;
+              }
+            </style>
+          `;
+          
+          // Append the style to the head
+          document.head.insertAdjacentHTML('beforeend', modalStyle);
+          
+          // Append the modal to the body
+          document.body.appendChild(preSaleModal);
+          
+          // Get the close button and continue shopping button
+          const closeBtn = preSaleModal.querySelector('.modal-close');
+          const continueBtn = document.getElementById('pre-sale-continue');
+          
+          // Add event listeners to close the modal
+          closeBtn.addEventListener('click', function() {
+            preSaleModal.style.display = "none";
+          });
+          
+          continueBtn.addEventListener('click', function() {
+            preSaleModal.style.display = "none";
+            window.location.href = "/collections/prolet-lyato-25";
+          });
+          
+          // Click outside the modal to close it
+          window.addEventListener('click', function(event) {
+            if (event.target == preSaleModal) {
+              preSaleModal.style.display = "none";
+            }
+          });
+        }
+        
+        // Display the modal
+        preSaleModal.style.display = "flex";
+      } else {
+        console.error("Klaviyo tracking not available");
+        alert("{{ 'products.product.pre_sale_error_message' | t }}");
+      }
+    }
+    
+    // Add event listeners to pre-sale buttons
+    if (preSaleButton) {
+      preSaleButton.addEventListener('click', handlePreSaleClick);
+    }
+    
+    if (stickyPreSaleButton) {
+      stickyPreSaleButton.addEventListener('click', handlePreSaleClick);
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('load', function () {
+    var atcButtons = [
+      ...document.querySelectorAll("form[action*='/cart/add'] button[type='submit']"),
+      document.getElementById('sticky-add-to-cart'),
+    ];
+
+    for (var i = 0; i < atcButtons.length; i++) {
+      atcButtons[i].addEventListener('click', function () {
+        if (window.Shopify && window.Shopify.customer && window.Shopify.customer.email) {
+          // If user is logged in, use their Shopify account email
+          customerEmail = window.Shopify.customer.email;
+        } else {
+          // Check localStorage for previously stored email
+          customerEmail = localStorage.getItem('customerEmail');
+        }
+
+        // Identify
+        if (customerEmail) {
+          _learnq.push(['identify', {
+            $email: customerEmail
+          }]);
+        }
+        _learnq.push(['track', 'Added to Cart', item]);
+      });
+    }
+
+  // Set the date we're counting down to
+  var endDate = '{{ section.settings.promotion_end_date }}';
+  var countDownDate = new Date(endDate).getTime();
+  var urgencyLabels = document.querySelectorAll('.product__promotion-urgency-label');
+  if (endDate && urgencyLabels?.length > 0) {
+      // Update the count down every 1 second
+      var x = setInterval(function () {
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // // Find the distance between now and the count down date
+        var diff = countDownDate - now;
+
+        // // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) + days * 24);
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        if (diff > 0) {
+          for (var i = 0; i < urgencyLabels.length; i++) {
+            urgencyLabels[i].innerHTML = '{{ "product.price_valid_for" | t }}' + (hours > 24 ? days : '') + (days === 0 ? '' : (days === 1 ? ' {{ "product.day" | t }} ' : ' {{ "product.days" | t }} ')) + hours % 24 + ' {{ "product.hours_short" | t }} ' + minutes + ' {{ "product.minutes_short" | t }} ' + seconds + ' {{ "product.seconds_short" | t }}';
+          }
+        } else {
+          clearInterval(x);
+          for (var i = 0; i < urgencyLabels.length; i++) {
+            urgencyLabels[i].remove();
+          }           
+        }
+    }, 500);
+  }
+  });
+</script>
+
+<style>
+  .video-modal {
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .video-modal div {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-modal video {
+    width: 100%;
+    height: 100%;
+  }
+
+  #close-video-btn {
+    position: absolute;
+    top: 48px;
+    right: 24px;
+  }
+  .lowest-price-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-right: 10px;
+    background-color: #d81112;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 10;
+  }
+  .chance-notice {
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+  }
+  .chance-notice:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #000;
+  }
+  .product-single__add-to-cart {
+    background-color: #c81853 !important;
+    border-color: #c81853 !important;
+  }
+  
+  #pre-sale-button, #sticky-pre-sale-button {
+    animation: glowing 2s infinite;
+    box-shadow: 0 0 10px rgba(200, 24, 83, 0.7);
+  }
+  
+  @keyframes glowing {
+    0% {
+      box-shadow: 0 0 0 0 rgba(200, 24, 83, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(200, 24, 83, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(200, 24, 83, 0);
+    }
+  }
+  
+  /* Out of stock button styling */
+  .product-single__add-to-cart[disabled] {
+    background-color: transparent !important;
+    color: #c81853 !important;
+    border: 2px solid #c81853 !important;
+    opacity: 1 !important;
+  }
+</style>

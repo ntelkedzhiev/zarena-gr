@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetchTool(domain:www.instagram.com)",
+      "Bash(find:*)",
+      "Bash(rg:*)",
+      "Bash(python3:*)",
+      "Bash(ls:*)"
+    ],
+    "deny": []
+  }
+}

@@ -1,0 +1,293 @@
+key,BG,GR
+collections/general/view_all,Виж всички,Δείτε όλα τα προϊόντα
+collections/general/infinite_scroll_no_more,Не са намерени повече резултати,Δεν βρέθηκαν αποτελέσματα
+collections/general/no_matches,За съжаление няма продукти в тази колекция,"Δυστυχώς, δεν βρέθηκαν προϊόντα σε αυτή τη συλλογή  "
+collections/general/view,Разгледай,Ρίξτε μια ματιά
+collections/general/product_count/one,{{ count }} продукт,{{ count }} προϊόν
+collections/general/product_count/other,{{ count }} продукти,{{ count }} προϊόντα
+collections/filtering/clear_all,Изчисти всичко,Διαγραφή όλων
+collections/filtering/filter,Филтър,Φίλτρο
+collections/filtering/all,Всичко,Όλα
+collections/filtering/mobile_close,Затвори филтрите,Κλείσιμο φίλτρων 
+collections/filtering/mobile_reveal,Покажи филтрите,Εμφάνιση φίλτρων
+collections/filtering/show_results,Покажи [x] резултати,Εμφάνιση [x] αποτελεσμάτων
+collections/filtering/show_results_singular,Покажи [x] резултат,Εμφάνιση [x] αποτελέσματος
+collections/sorting/title,Сортирай,Διαλογή
+collections/sorting/featured,Препоръчани,Σας προτείνουμε
+collections/sorting/price_ascending,От ниска към висока цена,Αύξουσα τιμή
+collections/sorting/price_descending,От висока към ниска цена,Φθίνουσα τιμή
+collections/sorting/az,А-Я,Α-Ω
+collections/sorting/za,Я-А,Ω-Α
+collections/sorting/best_selling,Най-продавани,Τα πιο ευπώλητα
+collections/sorting/date_descending,,
+collections/sorting/date_ascending,,
+blogs/general/view_all,Всички,Όλα 
+blogs/general/no_matches,"Все още няма статии! След като напишете, ще се появи тук.","Ακόμα δεν έχουν προστεθεί άρθρα! Όταν αναρτήσετε το κείμενό σας, αυτό θα εμφανιστεί εδώ. "
+blogs/comments/title,Коментар,Σχόλιο 
+blogs/comments/success_moderated,,
+blogs/comments/success,Вашият коментар беше публикуван успешно! Благодарим Ви!,Το σχόλιό σας δημοσιεύθηκε με επιτυχία! Σας ευχαριστούμε!
+blogs/comments/author_meta_said,{{ author }} каза:,{{ author }} είπε:
+blogs/comments/date_meta,{{ comment_date }},{{ comment_date }}
+blogs/comments/form_title,Остави коментар,Γράψτε σχόλιο
+blogs/comments/name,Име,Ονοματεπώνυμο 
+blogs/comments/email,Имейл,Ηλεκτρονική διεύθυνση
+blogs/comments/message,Коментар,Σχόλιο
+blogs/comments/post,Публикувай коментар,Αναρτήστε το σχόλιό σας
+blogs/article/back_to_blog_html,Върни се към {{ blog }},Επιστροφή στο {{ blog }}
+blogs/article/older_post,По-стара публикация,Παλιότερη ανάρτηση
+blogs/article/newer_post,По-нова публикация,Νεότερη ανάρτηση
+blogs/article/read_more,Прочетете още,Διαβάστε ακόμα
+blogs/filtering/filter_by,Сортирай по,Ταξινόμηση κατά 
+blogs/filtering/all,Всички,Όλα
+blogs/pagination/older_articles,По-стари статии,Παλιότερα άρθρα 
+blogs/pagination/newer_articles,По-хови статии,Τα πιο επιτυχιμένα άρθρα 
+general/404/title,Страницата не е намерена,Η σελίδα δεν βρέθηκε 
+general/404/subtext,"Страницата, която търсите, не съществува.",Η σελίδα που αναζητάτε δεν υπάρχει
+general/404/link,Продължи пазаруването,Συνεχίστε τις αγορές σας
+general/search/no_results,"Не бяха открити резултати за Вашето търсене ""{{ terms }}"". Моля, опитайте с друга заявка!","Δεν βρέθηκαν αποτελέσματα σχετικά με την αναζήτησή σας ""{{ terms }}"". Παρακαλούμε, δοκιμάστε μια άλλη!"
+general/search/results_with_count/one,Намерихме {{ count }} резултата.,Βρήκαμε {{ count }} αποτελέσματα.
+general/search/results_with_count/other,Намерихме {{ count }} резултата.,Βρήκαμε {{ count }} αποτελέσματα.
+general/search/page_placeholder,Имам нужда от...,Έχω ανάγκη από…
+general/search/input_label,Търсене,Αναζήτηση
+general/search/search_button,Търсене,Αναζήτηση
+general/search/title,Търсене,Αναζήτηση
+general/search/submit,Търсене,Αναζήτηση
+general/accessibility_labels/previous,Предишна,Προηγούμενη 
+general/accessibility_labels/next,Следваща,Επόμενη
+general/accessibility_labels/close,Затвори,Κλείσιμο 
+general/accessibility_labels/load_more,Зареди още,Εμφάνιση περισσότερων αποτελεσμάτων 
+general/accessibility_labels/video_play,Гледай филм,Δείτε ταινία
+general/accessibility_labels/skip_to_content,Премини към съдържанието,Ανακατεύθυνση προς το περιεχόμενο
+general/lightbox/previous,Предишна,Προηγούμενη
+general/lightbox/next,Следваща,Επόμενη
+general/lightbox/close,Затвори,Κλείσιμο
+general/meta/tags,"Маркирано ""{{ tags }}""","Επισημάνθηκε ""{{ tags }}"""
+general/meta/page,"Страница ""{{ tags }}""","Σελίδα ""{{ tags }}"""
+general/slider/images,Плъзгач на изображението,Κουμπί για να σύρετε την εικόνα 
+general/navigation/main_navigation_aria_label,Основна навигация,Κύρια πλοήγηση
+general/newsletter/success,"Благодарим ви, че се регистрирахте!",Ευχαριστούμε για την εγγραφή σας!
+general/signup/email_label,Имейл,Διεύθυνση ηλεκτρονικού ταχυδρομείου 
+general/signup/subscribe,Абонирай се,Γίνετε συνδρομητή 
+general/social/share_on_facebook,Сподели в Facebook,Κοινοποιήστε στο Facebook
+general/social/share_on_twitter,Споделете в Twitter,Κοινοποιήστε στο Twitter
+general/social/share_heading,Сподели,Κοινοποιήστε
+general/social/share_on_pinterest,Закачи,Επισύναψη 
+general/popup_section/success,"Благодарим ви, че се регистрирахте!",Ευχαριστούμε για την εγγραφή σας!
+general/popup_section/email_placeholder,Твоят имейл,Η ηλεκτρονική σας διεύθυνση
+general/popup_section/submit,Абонирай се,Γίνετε συνδρομητή 
+general/language/dropdown_label,Език,Γλώσσα
+general/currency/dropdown_label,Валута,Νόμισμα
+products/listing/quick_view,РАЗГЛЕДАЙ,ΕΞΕΡΕΥΝΗΣΤΕ 
+products/listing/loading,Зареждане...,Φόρτωση…
+products/listing/from,От,Από
+products/listing/sold_out,Изчерпано,Εξαντλήθηκε 
+products/variant/non_existent,Няма в наличност,Δεν υπάρχει διαθεσιμότητα 
+products/variant/out_of_stock,Няма в наличност,Δεν υπάρχει διαθεσιμότητα 
+products/variant/no_stock,Изчерпано,Εξαντλήθηκε
+products/product/add_to_cart,Добави в количката,Προσθέστε στο καλάθι αγορών σας
+products/product/unit_price_separator,/,/
+products/product/adding_to_cart,Добавяне,Πρόσθεση
+products/product/added_to_cart,Добавено в количката,Προστέθηκε στο καλάθι αγορών 
+products/product/popup_was_added,Беше добавено към вашата количка,Προστέθηκε στο καλάθι αγορών σας
+products/product/popup_checkout,Плащане,Πληρωμή 
+products/product/popup_continue_shopping,Продължи пазаруването,Συνεχίστε τις αγορές σας
+products/product/view_in_space,Преглед на вашата количка,Ανασκόπηση του καλαθιού αγορών σας 
+products/product/size_chart,Таблица с размери,Πίνακας μεγεθών
+products/product/selector_label,Опции,Επιλογές
+products/product/quantity,Количество,Ποσότητα
+products/product/product_unavailable,Този продукт не е наличен,Το προϊόν αυτό δεν είναι διαθέσιμο 
+products/product/description,Описание,Περιγραφή 
+products/product/functionality,Функционалност,Λειτουργικότητα 
+products/product/size_and_dimensions,Размери,Μεγέθη
+products/product/materials,Състав,Σύνθεση
+products/product/why_our_products,Защо да изберете нашите продукти?,Γιατί να επιλέξετε τα προϊόντα μας; 
+products/product/care_guide,Поддръжка,Συντήρηση
+products/product/view_details,Виж детайлите за продукта,Δείτε τις λεπτομέρειες του προϊόντος  
+products/product/previous,Предишна,Προηγούμενη σελίδα
+products/product/next,Следваща,Επόμενη σελίδα 
+products/product/sale,НАМАЛЕНИЕ,ΈΚΠΤΩΣΗ 
+products/product/reviews_link,Отзиви,Γνώμες
+products/product/sku,Код:,Κωδικός:
+products/product/backorder,ще бъде доставена в рамките на 48 часа.,θα παραδοθεί μέσα σε 48 ώρες
+products/product/with_code,С КОД,ΜΕ ΚΩΔΙΚΌ
+products/product/color,Цвят,Χρώμα
+products/product/collection_handle,Модел,Μοντέλο 
+products/product/header_new_filter,Най-нови,Προστέθηκαν τελευταία 
+products/filters/filter_button,Филтри (всички),Φίλτρα (όλα)
+products/filters/clear,Изчисти,Διαγραφή όλων
+products/filters/apply,Приложи,Εφαρμογή
+products/filters/min_price,Мин. цена,Κατώτατη τιμή
+products/filters/max_price,Макс. цена,Μέγιστη τιμή 
+products/filters/from,От,Από
+products/filters/to,До,Έως
+products/filters/clear_all,Изчисти филтри,Διαγραφή φίλτρων
+products/labels/sold_out,Изчерпано,Εξαντλήθηκε
+products/labels/new_in,Ново,Νέο 
+products/labels/only_x_left,,
+products/quick_buy/read_more,Още детайли,Περισσότερες λεπτομέρειες 
+products/quick_buy/buy_now,Купи сега,Αγοράστε τώρα
+products/general/include_taxes,Възползвайте се от безплатна доставка и преглед!,Επωφεληθείτε από τη δωρεάν παράδοση και έλεγχο!
+products/general/shipping_policy_html,"<a href=""{{ link }}"">Научете повече</a>","<a href=""{{ link }}"">Μάθετε περισσότερα</a>"
+store_availability/general/view_store_info,Информация за магазина,Πληροφορίες σχετικά με το  κατάστημα
+store_availability/general/check_other_stores,Проверете за наличност в другите магазини,Ελέγξτε τη διαθεσιμότητα στα άλλα καταστήματα
+store_availability/general/invalid_location_address,"Свържете се с магазина, за да потвърдите адреса",Επικοινωνήστε με το κατάστημα για να επιβεβαιώσετε τη διεύθυνση
+store_availability/general/kilometers,км,χιλιόμετρα
+store_availability/general/miles,мили,μίλια 
+store_availability/general/pick_up_available_at_html,,
+store_availability/general/pick_up_unavailable_at_html,,
+store_availability/general/pick_up_available,,
+store_availability/general/pick_up_currently_unavailable,,
+customer/account/view_addresses,Виж адрес,Δείτε τη διεύθυνση
+customer/account/title,Моят профил,Ο λογαριασμός μου
+customer/account/return,Върнете се към данните за акаунта,Επιστροφή στα στοιχεία λογαριασμού
+customer/general/return,Върнете се в магазина,Επιστροφή στο κατάστημα 
+customer/orders/order_number,Поръчай,Παραγγείλτε
+customer/orders/date,Дата,Ημερομηνία
+customer/orders/payment_status,Статус на плащането,Κατάσταση πληρωμής 
+customer/orders/none,Все още не сте направили поръчки.,Ακόμα δεν έχετε κάνει παραγγελία.
+customer/orders/total,Общо,Σύνολο
+customer/orders/fulfillment_status,,
+customer/activate_account/title,Активирайте акаунт,Ενεργοποιήστε τον λογαριασμό
+customer/activate_account/subtext,"Напишете Вашата парола, за да активирате профила си",Εισάγετε τον κωδικό πρόσβασής σας για να ενεργοποιήσετε τον λογαριασμό σας
+customer/activate_account/password,Парола,Κωδικός πρόσβασης
+customer/activate_account/password_confirm,Потвърди парола,Επιβεβαιώστε τον κωδικό πρόσβασής σας
+customer/activate_account/submit,Активирай акаунт,Ενεργοποιήστε τον λογαριασμό σας  
+customer/activate_account/cancel,,
+customer/addresses/title,Адрес,Διεύθυνση 
+customer/addresses/add_new,Друг адртес,Άλλη διεύθυνση
+customer/addresses/first_name,Име,Όνομα
+customer/addresses/last_name,Фамилия,Επώνυμο
+customer/addresses/company,Име на фирма,Επωνυμία εταιρείας
+customer/addresses/address1,Адрес 1,Διεύθυνση 1
+customer/addresses/address2,Адрес 2,Διεύθυνση 2
+customer/addresses/city,Град,Πόλη
+customer/addresses/country,Държава,Κράτος 
+customer/addresses/province,Село,Χωριό
+customer/addresses/zip,Пощенски код,Ταχυδρομικός Κώδικας
+customer/addresses/phone,Телефон,Τηλέφωνο
+customer/addresses/set_default,Задаване на адрес по подразбиране,Ορισμός προεπιλεγμένης διεύθυνσης 
+customer/addresses/add,Добави адрес,Προσθέστε διεύθυνση
+customer/addresses/cancel,Отмени,Αναίρεση 
+customer/addresses/default,По подразбиране,Προεπιλεγμένη επιλογή 
+customer/addresses/edit,Редактиране,Διόρθωση
+customer/addresses/delete_confirm,"Сигурни ли сте, че искате да изтриете този адрес?",Είστε βέβαιος/ βέβαιη ότι θέλετε να διαγράψετε τη διεύθυνση αυτή;
+customer/addresses/delete,Изтрий,Διαγραφή
+customer/addresses/edit_address,Поправи адрес,Διόρθωση διεύθυνσης
+customer/addresses/update,Поднови адрес,Ανανέωση διεύθυνσης 
+customer/login/title,Влез,Είσοδος
+customer/login/email,Имейл,Διεύθυνση ηλεκτρονικού ταχυδρομείου
+customer/login/password,Парола,Κωδικός πρόσβασης
+customer/login/forgot_password,Забравена парола?,Ξεχάσατε τον κωδικό πρόσβασής σας; 
+customer/login/sign_in,Регистрация,Εγγραφή
+customer/login/register,Създай акаунт,Δημιουργήστε λογαριασμό
+customer/login/return_to_store,Върнете се в магазина,Επιστροφή στο κατάστημα
+customer/login/guest_title,Продължи като гост,Συνεχίστε ως μη εγγεγραμμένος χρήστης
+customer/login/guest_continue,Продължи,Συνεχίστε
+customer/recover_password/title,Променете си паролата,Αλλαγή κωδικού πρόσβασης
+customer/recover_password/subtext,Ще ви изпратим имейл за промяна на паролата.,Θα σας στείλουμε ηλεκτρονικό μήνυμα για την αλλαγή του κωδικού πρόσβασής σας 
+customer/recover_password/email,Имейл,Διεύθυνση ηλεκτρονικού ταχυδρομείου
+customer/recover_password/submit,Изпращане,Αποστολή
+customer/recover_password/cancel,Отмени,Αναίρεση
+customer/order/title,Поръчка {{ name }},Παραγγελία  {{ name }}
+customer/order/cancelled_on,Поръчката е анулирана на {{ date }},Η παραγγελία ακυρώθηκε {{ date }}
+customer/order/cancelled_reason,Причина: {{ reason }},Λόγος: {{ reason }} 
+customer/order/billing_address,,
+customer/order/payment_status,Статус на плащането,Κατάσταση πληρωμής
+customer/order/shipping_address,Адрес за доставка,Διεύθυνση αποστολής
+customer/order/product,Продукт,Προϊόν
+customer/order/price,Цена,Τιμή 
+customer/order/quantity,Количество,Ποσότητα 
+customer/order/total,Общо,Σύνολο
+customer/order/fulfilled_on,Изпълнено на {{ date }},Εκτελέστηκε στις {{ date }}
+customer/order/subtotal,Междинна сума,Υποσύνολο
+customer/order/shipping,Доставка,Παράδοση
+customer/order/sku,КОД,ΚΩΔΙΚΟΣ
+customer/order/tax,Такса,Χρέωση
+customer/order/date,,
+customer/order/fulfillment_status,,
+customer/register/title,Създай акаунт,Δημιουργήστε λογαριασμό
+customer/register/first_name,Име,Όνομα
+customer/register/last_name,Фамилия,Επώνυμο
+customer/register/email,Имейл,Διεύθυνση ηλεκτρονικού ταχυδρομείου
+customer/register/password,Парола,Κωδικός πρόσβασης
+customer/register/submit,Създай,Δημιουργία
+customer/register/cancel,Върни се към магазина,Επιστροφή στο κατάστημα
+customer/reset_password/title,Нулиране на паролата,Επαναφορά κωδικού πρόσβασης 
+customer/reset_password/subtext,Нова парола за {{ email }},Καινούριος κωδικός πρόσβασης για {{ email }}
+customer/reset_password/password,Парола,Κωδικός πρόσβασης
+customer/reset_password/password_confirm,Потвърди паролата,Επιβεβαίωση κωδικού πρόσβασης
+customer/reset_password/submit,Нулиране на паролата,Επαναφορά κωδικού πρόσβασης 
+gift_cards/issued/title,Вашата подаръчна карта за {{ value }} за {{ shop }}!,Η Δωροκάρτα σας αξίας {{ value }} για {{ shop }}!
+gift_cards/issued/subtext,Това е вашата подаръчна карта!,Αυτή είναι η Δωροκάρτα σας!
+gift_cards/issued/initial_value_html,Стойност на подаръчна карта: {{ value }},Αξία της Δωροκάρτας: {{ value }}
+gift_cards/issued/expired,Изтекъл на {{ expiry }},Έληξε στις {{ expiry }}
+gift_cards/issued/active,Изтича на {{ expiry }},Λήγει στις {{ expiry }}
+gift_cards/issued/remaining_html,{{ balance }} остава,{{ balance }} υπόλοιπο
+gift_cards/issued/shop_link,Започни пазаруването,Ξεκινήστε τις αγορές σας
+gift_cards/issued/add_to_apple_wallet,Добави към електронно портмоне,Προσθέστε στο ηλεκτρονικό πορτοφόλι
+gift_cards/issued/print,Печат,Σφραγίδα
+gift_cards/issued/disabled,,
+gift_cards/issued/redeem,,
+map/errors/address_error,Грешка при търсене на този адрес,Σφάλμα κατά την αναζήτηση αυτής της διεύθυνσης
+map/errors/address_no_results,Няма резултати за този адрес,Δεν υπάρχουν αποτελέσματα για αυτή τη διεύθυνση 
+map/errors/address_query_limit_html,,
+map/errors/auth_error,,
+layout/navigation/back,Назад,Πίσω
+layout/navigation/home,Начало,Αρχή
+layout/navigation/cart,Количка,Καλάθι αγορών
+layout/cart_summary/cart,Количка,Καλάθι αγορών 
+layout/footer/navigation_aria_label,Вторична навигация,Δευτερεύουσα πλοήγηση 
+layout/signup/post_success,"Благодарим ви, че се регистрирахте!",Ευχαριστούμε για την εγγραφή σας!
+layout/signup/placeholder,Въведете имейл,Εισάγεται την ηλεκτρονική σας διεύθυνση
+layout/signup/input_label,Имейл,Διεύθυνση ηλεκτρονικού ταχυδρομείου 
+layout/signup/submit,Регистрирай се,Εγγραφθείτε 
+layout/header/menu,Меню,Κατάλογος επιλογών 
+layout/header/search,Терсене,Αναζήτηση
+layout/header/menu_aria_label,,
+layout/customer/account,Акаунт,Λογαριασμός
+layout/customer/log_out,Изход,Έξοδος 
+cart/terms/confirmation,"Съгласете се с правилата и условията, преди да продължите.",Θα πρέπει να συμφωνήσετε με τους κανόνες και τους όρους πριν συνεχίσετε.
+cart/terms/agreement_html,"Съгласен съм с <a href=""{{ terms_url }}"" target=""_blank"">terms and refund policy</a>","Συμφωνώ με <a href=""{{ terms_url }}"" target=""_blank"">terms and refund policy</a>"
+cart/general/title,Количка,Καλάθι αγορών 
+cart/general/product,Продукт,Προϊόν
+cart/general/price,Цена,Τιμή 
+cart/general/quantity,Количество,Ποσότητα
+cart/general/total,Общо,Σύνολο
+cart/general/decrease,Намаление,Έκπτωση
+cart/general/increase,Увеличение,Αύξηση
+cart/general/remove,Премахни,Διαγραφή
+cart/general/continue,Продължи пазаруването,Συνεχίστε τις αγορές σας
+cart/general/update,Aктуализирай количката,Ανανεώστε το καλάθι αγορών σας
+cart/general/subtotal,Междинна сума,Υποσύνολο
+cart/general/taxes_included_but_shipping_at_checkout,"С включен данък и доставка, изчислена при плащане","Συμπεριλαμβάνει φόρους και έξοδα αποστολής, όπως υπολογίστηκε κατά την πληρωμή "
+cart/general/taxes_and_shipping_at_checkout,"Данъци и доставка, изчислени при плащане","Φόροι και έξοδα αποστολής, όπως υπολογίστηκαν κατά την πληρωμή "
+cart/general/checkout,ЗАВЪРШЕТЕ ПОРЪЧКАТА,ΟΛΟΚΛΗΡΩΣΤΕ ΤΗΝ ΠΑΡΑΓΓΕΛΙΑ ΣΑΣ
+cart/general/empty,В момента количката ви е празна.,Αυτή τη στιγμή το καλάθι αγορών σας είναι άδειο.
+cart/general/continue_browsing,Продължете пазаруването,Συνεχίστε τις αγορές σας
+cart/general/taxes_included_and_shipping_policy_html,Цената за доставка ще бъде калкулирана при завършване на поръчката.,Τα έξοδα αποστολής θα υπολογιστούν με την ολοκλήρωση της παραγγελίας.
+cart/general/backorder,Продуктът е изчерпан и ще бъде доставен веднага щом има наличност.,Το προϊόν αυτό εξαντλήθηκε και θα παραδοθεί αμέσως μόλις είναι διαθέσιμο.   
+cart/general/taxes_and_shipping_policy_at_checkout_html,,
+cart/label/note,Добави бележка към поръчката,Προσθέστε σημείωμα στην παραγγελία σας
+onboarding/blog/empty,"Все още няма статии! След като напишете, ще се появи тук.","Ακόμα δεν έχουν προστεθεί άρθρα! Μόλις γράψετε ένα, αυτό θα εμφανιστεί εδώ."
+onboarding/article/author,Име,Όνομα
+onboarding/article/title,Заглавието на публикацията ви,Τίτλος της δημοσίευσής σας
+onboarding/article/excerpt,"Вашият магазин все още не е публикувал блогове. Блог може да се използва, за да се говори за стартиране на нови продукти, съвети или други новини, които искате да споделите с клиентите си. Можете да разгледате блога за електронна търговия на Shopify за вдъхновение и съвети за вашия собствен магазин и блог.","Το κατάστημά σας δεν έχει δημοσιεύσει ακόμη Ιστολόγιο (blog). Ένα Ιστολόγιο μπορεί να χρησιμοποιηθεί για να συζητηθούν νέες κυκλοφορίες προϊόντων, συμβουλές ή άλλα νέα που θέλετε να μοιραστείτε με τους πελάτες σας. Μπορείτε να ανατρέξετε στο Ιστολόγιο ηλεκτρονικού εμπορίου του Shopify για έμπνευση και συμβουλές για το δικό σας κατάστημα και Ιστολόγιο."
+onboarding/collection/title,Колекция,Συλλογή
+onboarding/product/title,Продукт,Προϊόν
+storefront_password/login/link,Въведете парола,Εισάγετε τον κωδικό πρόσβαση σας
+storefront_password/login/button,Въведете,Εισάγετε 
+storefront_password/login/admin_link_html,"Вие ли сте собственик на <a href=""/admin"">Log in here</a> ?","Εσείς είστε ο ιδιοκτήτης του <a href=""/admin"">Log in here</a> ;"
+storefront_password/login/label,"Влезте, използвайки тази парола:",Μπείτε χρησιμοποιώντας αυτόν τον κωδικό πρόσβασης: 
+storefront_password/signup/success,"Благодарим Ви за проявения интерес! Бъдете сигурни, че ще ви държим в течение.",Ευχαριστούμε για το ενδιαφέρον σας! Θα σας κρατάμε ενήμερο. 
+storefront_password/general/powered_by,,
+contact/form/post_success,"Благодарим Ви, че се свързахте с нас. Ще се свържем с вас възможно най-скоро.",Ευχαριστούμε που επικοινωνήσατε μαζί μας. Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατόν. 
+contact/form/post_error,"Съжаляваме, не успяхме да изпратим Вашето запитване. Моля, коригирайте следното и изпратете отново:",Δυστυχώς δεν καταφέραμε να στείλουμε το αίτημά σας. Παρακαλούμε να διορθώσετε τα ακόλουθα στοιχεία και να το αποστείλετε εκ’ νέου: 
+contact/form/message,Съобщение,Μήνυμα 
+contact/form/name,Име,Όνομα
+contact/form/email,Имейл,Διεύθυνση ηλεκτρονικού ταχυδρομείου 
+contact/form/send,Изпрати,Αποστολή
+date_formats/month_date_year,"%B %d, %Y",
+shopify/checkout/general/continue_to_shipping_method,Продължете напред,Συνέχεια
+shopify/checkout/general/continue_to_payment_method,Продължете напред,Συνέχεια 
+shopify/checkout/contact/shipping_address_title,Попълнете адрес за безплатна доставка до офис на Спиди или безплатна доставка до личен адрес,Συμπληρώστε διεύθυνση για δωρεάν αποστολή σε ένα γραφείο της Speedy ή για δωρεάν αποστολή στη διεύθυνσή σας
+shopify/checkout/thank_you/title,"Благодарим Ви за поръчката! В случай, че не сте получили потвърдителен имейл, моля, проверете в СПАМ папката или в папка РЕКЛАМНИ СЪОБЩЕНИЯ!","Ευχαριστούμε για την παραγγελία σας! Σε περίπτωση που δεν έχετε λάβει μήνυμα επιβεβαίωση στην ηλεκτρονική σας διεύθυνση, παρακαλούμε να ελέγξετε τον φάκελο «ΑΝΕΠΙΘΥΜΗΤΗ ΑΛΛΗΛΟΓΡΑΦΙΑ» ή τον φάκελο «ΔΙΑΦΗΜΙΣΤΙΚΑ ΜΗΝΥΜΑΤΑ»!"

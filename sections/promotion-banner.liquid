@@ -1,0 +1,41 @@
+<div class="hidden-desktop wide-container section-spacing promotion-section section-border {% if section.settings.alternate_bg_color %}use-alt-bg {% endif %}" data-section-type="prmotion-banner" data-cc-animate>
+    <h2 class="h2 bold">{{ section.settings.title }}</h2>
+    <img class="rimage__image" loading="lazy" src="{{ section.settings.promotion_image | image_url: width: 1024, height: 1024 }}" alt="{{ "Promotion image" | escape }}" />
+    <a href="{{ section.settings.product.url }}" class="promotion-button button">{{ section.settings.button_text }} ⮕</a>
+</div>
+
+{% schema %}
+{
+  "name": "Promotion Banner",
+  "class": "section-promotion-banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+    },
+    {
+      "type": "image_picker",
+      "id": "promotion_image",
+      "label": "Image"
+    },
+    {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotion Banner",
+      "category": "Product",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

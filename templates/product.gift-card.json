@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-gift-card",
+      "settings": {
+        "gift_card_title": "Gift Card",
+        "show_quantity_selector": false,
+        "show_remaining_quantity": false
+      },
+      "blocks": {
+        "custom_text": {
+          "type": "text",
+          "settings": {
+            "custom_text": "<p>Give the perfect gift with a gift card from Zarena. Recipients can use it to purchase any product from our store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "custom_text"
+      ]
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations"
+  ]
+}

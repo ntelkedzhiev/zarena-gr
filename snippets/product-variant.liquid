@@ -1,0 +1,8 @@
+{% comment %}
+  This snippet expects the 'product' variable to be available.
+{% endcomment %}
+<div class="variant-product">
+  <a href="{{ product.url }}">
+    <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title | escape }}">
+  </a>
+</div>

@@ -1,0 +1,418 @@
+{% comment %} Product form for gift cards {% endcomment %}
+
+<div class="product-page gift-card-page">
+  <div class="product-grid">
+    <div class="product-single__info hidden-desktop">
+      <h1 class="product-single__title">{{ product.title }}</h1>
+      <div class="product-single__price-wrapper">
+        <span class="mobile-price product-single__price" id="mobile-price">
+          {%- if product.selected_or_first_available_variant.compare_at_price
+              > product.selected_or_first_available_variant.price
+          -%}
+            <del>{{ product.selected_or_first_available_variant.compare_at_price | money }}</del>
+          {%- endif -%}
+          {{- product.selected_or_first_available_variant.price | money -}}
+        </span>
+      </div>
+    </div>
+    <div class="gift-card-image-container">
+      {% comment %} Gift card image {% endcomment %}
+      {% assign featured_image = product.selected_or_first_available_variant.featured_media
+        | default: product.featured_media
+      %}
+      <div class="gift-card-image-wrapper">
+        <img
+          src="{{ featured_image | img_url: '600x600' }}"
+          alt="{{ featured_image.alt | escape }}"
+          class="gift-card-image"
+        >
+      </div>
+    </div>
+
+    <div class="product-single__info">
+      {% comment %} Product title, price {% endcomment %}
+      <div class="hidden-mobile">
+        <h1 class="product-single__title">{{ product.title }}</h1>
+        <div class="product-single__price-wrapper">
+          <span class="desktop-price product-single__price" id="desktop-price">
+            {%- if product.selected_or_first_available_variant.compare_at_price
+                > product.selected_or_first_available_variant.price
+            -%}
+              <del>{{ product.selected_or_first_available_variant.compare_at_price | money }}</del>
+            {%- endif -%}
+            {{- product.selected_or_first_available_variant.price | money -}}
+          </span>
+        </div>
+      </div>
+
+      {% comment %} Product description {% endcomment %}
+      <div class="product-single__description">
+        {{ product.description }}
+      </div>
+
+      {% comment %} Gift card values {% endcomment %}
+      <div class="gift-card-values">
+        <div class="gift-card-values__title">{{ 'gift_cards.form.select_value' | t }}</div>
+        <select
+          id="variant-select"
+          class="gift-card-variant-selector"
+          aria-label="{{ 'products.product.selector_label' | t | escape }}"
+        >
+          {% for variant in product.variants %}
+            <option
+              value="{{ variant.id }}"
+              {% if variant == product.selected_or_first_available_variant %}
+                selected="selected"
+              {% endif %}
+              data-price="{{ variant.price | money }}"
+            >
+              {{ variant.price | money }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      {% comment %} Recipient information {% endcomment %}
+      <div class="gift-recipient-info">
+        <h3>{{ 'gift_cards.form.details_heading' | t }}</h3>
+
+        <div class="recipient-info-disclaimer">
+          <p>{{ 'gift_cards.form.recipient_disclaimer' | t }}</p>
+        </div>
+
+        <form
+          method="post"
+          action="/cart/add"
+          class="product-single__form gift-card-form"
+          id="product-form"
+          data-ajax-add-to-cart="true"
+        >
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <input type="hidden" id="product-quantity" name="quantity" value="1">
+          <input type="hidden" value="/cart" name="redirectTo">
+
+          <div class="form-fields">
+            <div class="form-field">
+              <label for="recipient-name">
+                {{- 'gift_cards.form.recipient_name' | t }}
+                <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="recipient-name"
+                name="properties[Recipient Name]"
+                placeholder="{{ 'gift_cards.form.recipient_name_placeholder' | t }}"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="recipient-email">
+                {{- 'gift_cards.form.recipient_email' | t }}
+                <span class="required">*</span></label
+              >
+              <input
+                type="email"
+                id="recipient-email"
+                name="properties[Recipient Email]"
+                placeholder="{{ 'gift_cards.form.recipient_email_placeholder' | t }}"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="gift-message">{{ 'gift_cards.form.gift_message' | t }}</label>
+              <textarea
+                id="gift-message"
+                name="properties[Gift Message]"
+                placeholder="{{ 'gift_cards.form.gift_message_placeholder' | t }}"
+              ></textarea>
+            </div>
+
+            {% comment %}
+              <div class="form-field delivery-date">
+                <label for="delivery-date">{{ 'gift_cards.form.delivery_date' | t }}</label>
+                <input
+                  type="date"
+                  id="delivery-date"
+                  name="properties[Delivery Date]"
+                  min="{{ 'now' | date: '%Y-%m-%d' }}"
+                >
+              </div>
+            {% endcomment %}
+          </div>
+
+          <div class="gift-card-disclaimer">
+            <p>{{ 'gift_cards.form.disclaimer' | t }}</p>
+          </div>
+
+          <button
+            type="submit"
+            id="gift-card-submit"
+            class="button product-single__add-to-cart"
+            style="background-color: #c81853; border-color: #c81853;"
+            disabled
+          >
+            {{ 'products.product.add_to_cart' | t }}
+          </button>
+        </form>
+      </div>
+
+      <div class="gift-card-features">
+        <h3>{{ 'gift_cards.form.features_heading' | t }}</h3>
+        <ul>
+          <li>{{ 'gift_cards.form.features.digital_delivery' | t }}</li>
+          <li>{{ 'gift_cards.form.features.valid_online' | t: shop_name: shop.name }}</li>
+          <li>{{ 'gift_cards.form.features.expiration' | t }}</li>
+          <li>{{ 'gift_cards.form.features.easy_redeem' | t }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .gift-card-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .gift-card-image-container {
+    margin-bottom: 0;
+  }
+
+  .gift-card-image-wrapper {
+    text-align: center;
+    margin: 0;
+  }
+
+  .gift-card-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .gift-card-image-container {
+      margin-bottom: 0;
+    }
+
+    .gift-card-image {
+      max-width: 90%;
+    }
+  }
+
+  .gift-recipient-info {
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+
+  .gift-recipient-info h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .form-fields {
+    margin-bottom: 20px;
+  }
+
+  .form-field {
+    margin-bottom: 15px;
+  }
+
+  .form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .form-field textarea {
+    height: 100px;
+    resize: vertical;
+  }
+
+  .gift-card-variant-selector {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .gift-card-values {
+    margin: 20px 0;
+  }
+
+  .gift-card-values__title {
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .gift-card-features {
+    margin: 30px 0;
+  }
+
+  .gift-card-features h3 {
+    margin-bottom: 15px;
+  }
+
+  .gift-card-features ul {
+    padding-left: 20px;
+  }
+
+  .gift-card-features li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .gift-card-disclaimer {
+    background-color: #f0f8ff;
+    border: 1px solid #d1e7dd;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 0 0 20px 0;
+  }
+
+  .gift-card-disclaimer p {
+    margin: 0;
+    color: #0f5132;
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  .required {
+    color: #c81853;
+    font-weight: bold;
+  }
+
+  .button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #ccc !important;
+    border-color: #ccc !important;
+  }
+
+  .recipient-info-disclaimer {
+    background-color: #f8f9fa;
+    border-left: 4px solid #c81853;
+    padding: 12px 15px;
+    margin: 15px 0 20px 0;
+    border-radius: 4px;
+  }
+
+  .recipient-info-disclaimer p {
+    margin: 0;
+    color: #495057;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const variantSelector = document.getElementById('variant-select');
+    const hiddenInput = document.querySelector('input[name="id"]');
+    const mobilePrice = document.getElementById('mobile-price');
+    const desktopPrice = document.getElementById('desktop-price');
+    const submitButton = document.getElementById('gift-card-submit');
+    const recipientName = document.getElementById('recipient-name');
+    const recipientEmail = document.getElementById('recipient-email');
+    
+    // Function to validate required fields and enable/disable button
+    function validateForm() {
+      const nameValid = recipientName.value.trim() !== '';
+      const emailValid = recipientEmail.value.trim() !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(recipientEmail.value);
+      
+      if (nameValid && emailValid) {
+        submitButton.disabled = false;
+        submitButton.style.backgroundColor = '#c81853';
+        submitButton.style.borderColor = '#c81853';
+      } else {
+        submitButton.disabled = true;
+        submitButton.style.backgroundColor = '#ccc';
+        submitButton.style.borderColor = '#ccc';
+      }
+    }
+    
+    // Add event listeners for real-time validation
+    if (recipientName && recipientEmail && submitButton) {
+      recipientName.addEventListener('input', validateForm);
+      recipientEmail.addEventListener('input', validateForm);
+      
+      // Initial validation
+      validateForm();
+    }
+    
+    if (variantSelector && hiddenInput) {
+      variantSelector.addEventListener('change', function() {
+        // Update the hidden input value with the selected variant ID
+        hiddenInput.value = this.value;
+        
+        // Get the selected variant from product data
+        const selectedVariantId = this.value;
+        const productVariants = {{ product.variants | json }};
+        const selectedVariant = productVariants.find(variant => variant.id.toString() === selectedVariantId);
+        
+        if (selectedVariant) {
+          // Format prices correctly
+          const formattedPrice = formatMoney(selectedVariant.price);
+          const formattedComparePrice = selectedVariant.compare_at_price ? formatMoney(selectedVariant.compare_at_price) : null;
+          
+          // Update mobile price
+          if (mobilePrice) {
+            if (selectedVariant.compare_at_price && selectedVariant.compare_at_price > selectedVariant.price) {
+              mobilePrice.innerHTML = `<del>${formattedComparePrice}</del>${formattedPrice}`;
+            } else {
+              mobilePrice.innerHTML = formattedPrice;
+            }
+          }
+          
+          // Update desktop price
+          if (desktopPrice) {
+            if (selectedVariant.compare_at_price && selectedVariant.compare_at_price > selectedVariant.price) {
+              desktopPrice.innerHTML = `<del>${formattedComparePrice}</del>${formattedPrice}`;
+            } else {
+              desktopPrice.innerHTML = formattedPrice;
+            }
+          }
+        }
+      });
+    }
+    
+    // Helper function to format money value using Shopify's currency format
+    function formatMoney(cents) {
+      // Standard Shopify money format
+      const value = (cents / 100).toFixed(2);
+      return theme.Shopify.formatMoney(value, theme.money_format);
+    }
+    
+    // Form validation on submit (as backup)
+    const giftCardForm = document.querySelector('.gift-card-form');
+    if (giftCardForm) {
+      giftCardForm.addEventListener('submit', function(event) {
+        const nameValid = recipientName.value.trim() !== '';
+        const emailValid = recipientEmail.value.trim() !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(recipientEmail.value);
+        
+        if (!nameValid || !emailValid) {
+          event.preventDefault();
+          alert('{{ 'gift_cards.form.validation.required_fields' | t }}');
+        }
+      });
+    }
+  });
+</script>

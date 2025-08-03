@@ -1,0 +1,64 @@
+{% comment %}
+  Main gift card section
+  Used for Gift Card product page
+{% endcomment %}
+
+<div class="section section--gift-card">
+  <div class="page-width">
+    {%- comment -%}
+      If we are on a gift card product, render the gift card form instead of the regular product form
+    {%- endcomment -%}
+    {% render 'product-form-gift-card', product: product %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Gift Card Product",
+  "class": "product-template-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Gift Card Settings"
+    },
+    {
+      "type": "text",
+      "id": "gift_card_title",
+      "label": "Gift Card Title",
+      "default": "Gift Card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity_selector",
+      "label": "Show quantity selector",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_remaining_quantity",
+      "label": "Show remaining quantity",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Custom Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "custom_text",
+          "label": "Custom Text",
+          "default": "<p>Add custom information or instructions about your gift cards here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gift Card Product",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

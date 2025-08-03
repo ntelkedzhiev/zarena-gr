@@ -1,0 +1,11 @@
+<div class="collection-tile">
+  <a href="{{ collection.url }}">
+    <img
+      class="tile-image"
+      alt="{{ collection.title }}"
+      src="{{ image | image_url: width: 1024, height: 1024 }}"
+      loading="lazy"
+    >
+    <h4 class="collection-title">{{ name }}</h4>
+  </a>
+</div>

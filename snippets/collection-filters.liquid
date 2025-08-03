@@ -1,0 +1,116 @@
+{{ 'collection-filters.css' | asset_url | stylesheet_tag }}
+{% assign colors_data = 'white:#FFFFFF,black:#000000,silver:#C0C0C0,gold:#cbb290,purple:#7b456b,pink:#FFC0CB,blue:#c6d9e3,orange:#fd6f16,green:#64bf81,cyclamen:#d71563,beige:#dbbfa7,red:#eb4240,powder:#FFB6C1,print:#b09a83,brown:#672e20,yellow:#e2e24d,sand:#eccca2,grey:#808080,burgundy:#800020'
+  | split: ','
+%}
+<div class="filters-container hidden-mobile">
+  <facet-filters-form id="FacetFiltersForm">
+    <form class="filter-form">
+      {%- for filter in collection.filters -%}
+        {% unless filter.label contains 'Header ' %}
+          <details class="filter-group js-filter" data-index="{{ forloop.index }}" open>
+            <summary class="filter-group-summary">
+              <div>
+                {%- if filter.label == 'Цена' -%}
+                  <span>{{ filter.label }}</span>
+                {%- else -%}
+                  {% assign snake_case_label = filter.label | replace: ' ', '_' | downcase %}
+                  {% assign namespaced_label = 'products.product.' | append: snake_case_label %}
+                  <span>{{ namespaced_label | t }}</span>
+                {%- endif -%}
+
+                {%- if filter.active_values.size > 0 -%}
+                  <span>({{ filter.active_values.size }})</span>
+                {%- endif -%}
+              </div>
+            </summary>
+
+            <div class="filter-group-display">
+              <div class="filter-group-display__header">
+                {%- if filter.active_values.size > 0 -%}
+                  <span class="filter-group-display__header-selected">{{ filter.active_values.size }} selected</span>
+                  <facet-remove>
+                    <a href="{{ filter.url_to_remove }}" class="filter-group-display__header-reset">Reset</a>
+                  </facet-remove>
+                {%- endif -%}
+              </div>
+
+              {%- case filter.type -%}
+                {%- when 'boolean', 'list' -%}
+                  <ul class="{% if filter.label == 'Color' %}color-filter-list{% else %}filter-group-display__list{% endif %}">
+                    {%- for filter_value in filter.values -%}
+                      <li class="filter-group-display__list-item">
+                        <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+                          <input
+                            type="checkbox"
+                            name="{{ filter_value.param_name }}"
+                            value="{{ filter_value.value }}"
+                            id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                            {% if filter_value.active -%}
+                              checked
+                            {%- endif %}
+                            {% if filter_value.count == 0 and filter_value.active == false -%}
+                              disabled
+                            {%- endif %}
+                          >
+                          {%- if filter.label == 'Color' -%}
+                            {% for color in colors_data %}
+                              {% assign data = color | split: ':' %}
+                              {% assign name = data[0] %}
+                              {% assign hex = data[1] %}
+
+                              {% if name == filter_value.label %}
+                                <span class="color-swatch" style="background-color: {{ hex }};"></span>
+                              {% endif %}
+                            {% endfor %}
+                          {%- else -%}
+                            {{ filter_value.label }}
+                          {%- endif -%}
+                        </label>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- when 'price_range' -%}
+                  <div class="filter-group-display__price-range">
+                    <div class="filter-group-display__price-range-from">
+                      <div for="Filter-{{ filter.min_value.param_name }}">
+                        {{ 'products.filters.from' | t | downcase }}
+                      </div>
+                      <input
+                        name="{{ filter.min_value.param_name }}"
+                        id="Filter-{{ filter.min_value.param_name }}"
+                        {% if filter.min_value.value -%}
+                          value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                        {%- endif %}
+                        type="number"
+                        placeholder="0"
+                        min="0"
+                        max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                      >
+                      <span>{{ cart.currency.symbol }}</span>
+                    </div>
+                    <div class="filter-group-display__price-range-to">
+                      <div for="Filter-{{ filter.max_value.param_name }}">
+                        {{ 'products.filters.to' | t | downcase }}
+                      </div>
+                      <input
+                        name="{{ filter.max_value.param_name }}"
+                        id="Filter-{{ filter.max_value.param_name }}"
+                        {% if filter.max_value.value -%}
+                          value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                        {%- endif %}
+                        type="number"
+                        placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                        min="0"
+                        max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                      >
+                      <span>{{ cart.currency.symbol }}</span>
+                    </div>
+                  </div>
+              {%- endcase -%}
+            </div>
+          </details>
+        {% endunless %}
+      {%- endfor -%}
+    </form>
+  </facet-filters-form>
+</div>

@@ -1,0 +1,23 @@
+{% assign buttonText = 'Разгледай модел' %}
+{% assign productName = settings.product.title | split: " " | first %}
+{% assign productUrl = settings.product.url %}
+
+<div>
+    <div class="customer-review">
+        <div class="review-details">
+            <div class="review-purchase-info">
+                <p>{{ settings.customer_name }}, закупила <a class="link-display" href="{{ productUrl }}">{{ productName }}</a>:
+                <a class="hidden-mobile" href="{{ productUrl }}"><img class="product-image-review" src="{{ settings.product.images[0] | image_url: width: 480, height: 480 }}" loading="lazy"/></a>
+            </div>
+            <div class="review-text">
+                {{ settings.review }}
+            </div>
+        </div>
+        <div class="cc-testimonial__star-rating review-stars" data-cc-animate="cc-fade-in-up">
+            {%- for i in (1..5) -%}
+                <span class="cc-testimonial__star">{% render 'svg-star' %}</span>
+            {%- endfor -%}
+        </div>
+        <a href="{{ settings.product.url }}" class="button review-button ">{{ buttonText }} {{ productName }} ⮕</a>
+    </div>
+</div>

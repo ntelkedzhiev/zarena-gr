@@ -1,0 +1,53 @@
+<div class="wide-container section-spacing half-gutter {% if section.settings.alternate_bg_color %}use-alt-bg {% endif %}" data-section-type="featured-collections" data-cc-animate>
+   {% render 'section-heading', title: section.settings.title %}
+   <div class="instagram-grid">
+    {% for block in section.blocks %}
+      {% render 'instagram-post', post_id: block.settings.post_id %}
+    {% endfor %}
+   </div>
+</div>
+
+{% schema %}
+{
+  "name": "Instagram Feed",
+  "class": "section-instagram-feed",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "As seen on Instagram"
+    },
+    {
+      "type": "checkbox",
+      "id": "alternate_bg_color",
+      "label": "Use alternate section color",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "post",
+      "name": "Post",
+      "settings": [
+        {
+          "type": "text",
+          "id": "post_id",
+          "label": "Post ID"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Feed",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

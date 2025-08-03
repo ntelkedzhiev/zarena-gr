@@ -1,0 +1,66 @@
+<div class="product-features">
+  {% if product.metafields.custom.description %}
+    <details class="product-feature">
+      <summary>{{ 'products.product.description' | t }}</summary>
+      <div class="product-feature-content">
+        {{ product.metafields.custom.description }}
+      </div>
+    </details>
+  {% endif %}
+
+  {% if product.metafields.custom.size_and_dimensions %}
+    <details class="product-feature">
+      <summary>{{ 'products.product.size_and_dimensions' | t }}</summary>
+      <div class="product-feature-content" data-feature-content>
+        {{ product.metafields.custom.size_and_dimensions | newline_to_br }}
+      </div>
+    </details>
+  {% endif %}
+
+  {% if product.metafields.custom.materials %}
+    <details class="product-feature">
+      <summary>{{ 'products.product.materials' | t }}</summary>
+      <div class="product-feature-content" data-feature-content>
+        {{ product.metafields.custom.materials | newline_to_br }}
+      </div>
+    </details>
+  {% endif %}
+
+  {% if product.metafields.custom.why_our_products %}
+    <details class="product-feature">
+      <summary>{{ 'products.product.why_our_products' | t }}</summary>
+      <div class="product-feature-content" data-feature-content>
+        {{ product.metafields.custom.why_our_products | newline_to_br }}
+      </div>
+    </details>
+  {% endif %}
+
+  {% if product.metafields.descriptors.care_guide %}
+    <details class="product-feature">
+      <summary>{{ 'products.product.care_guide' | t }}</summary>
+      <div class="product-feature-content" data-feature-content>
+        {{ product.metafields.descriptors.care_guide | newline_to_br }}
+      </div>
+    </details>
+  {% endif %}
+
+  {% if product.metafields.custom.functionality %}
+    <details class="product-feature">
+      <summary>{{ 'products.product.functionality' | t }}</summary>
+      <div class="product-feature-content" data-feature-content>
+        {{ product.metafields.custom.functionality | newline_to_br }}
+      </div>
+    </details>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var featureContents = document.querySelectorAll('[data-feature-content]');
+    featureContents.forEach(function (content) {
+      var html = content.innerHTML;
+      html = '<ul><li>' + html.replace(/<br>/g, '</li><li>') + '</li></ul>';
+      content.innerHTML = html;
+    });
+  });
+</script>

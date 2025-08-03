@@ -1,0 +1,24 @@
+{% assign variantId = '47566765359441' %}
+{% assign imageUrl = 'https://zarenabags.com/cdn/shop/files/gift-box-vector-1721585_180x.jpg?v=1700066632' %}
+{% assign title = 'Безплатен подарък' %}
+
+<li style="margin-bottom: 1em" class="item clearfix">
+  <div class="col-image">
+    <img src="{{ imageUrl }}">
+  </div>
+  <div class="col-notimage">
+    <div class="desc">
+      <div class="title">
+        <span class="product-title">{{ title }}</span>
+      </div>
+      <div style="color: grey">С тази поръчка получаваш безплатен подарък!</div>
+      {% comment %}
+        Line Item Properties
+      {% endcomment %}
+    </div>
+
+    <div class="line-total">
+      <div class="theme-money">{{ 0 | money }}</div>
+    </div>
+  </div>
+</li>

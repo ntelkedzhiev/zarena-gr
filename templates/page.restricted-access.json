@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "restricted_access": {
+      "type": "restricted-collection-landing",
+      "settings": {
+        "heading": "THE NEW COLLECTION IS HERE",
+        "description": "<p>Our exclusive new spring/summer 2025 collection is available only to our subscribers.</p>",
+        "signup_text": "Sign up and you will receive your secret access code.",
+        "signup_button_text": "Sign Up",
+        "code_text": "Enter your access code below to view the exclusive collection.",
+        "code_label": "Access Code",
+        "code_placeholder": "Enter your access code",
+        "code_button_text": "Submit",
+        "code_error_text": "Invalid access code. Please try again.",
+        "thank_you_text": "Thank you! You now have access to our exclusive collection.",
+        "view_collection_text": "View Collection",
+        "collection_url": "/collections/prolet-lyato-25",
+        "access_code": "IAMSPECIAL"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "restricted_access"
+  ]
+}

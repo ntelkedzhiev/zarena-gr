@@ -1,0 +1,203 @@
+{%- liquid
+  assign on_sale = false
+  if product.compare_at_price > product.price
+    assign on_sale = true
+  endif
+
+  assign discount_code = product.metafields.custom.special_discount_code
+
+  assign product_url = product.url | within: collection
+
+  if animation_type == blank
+    assign animation_type = 'cc-fade-in-up'
+  endif
+
+  assign primary_image = product.featured_media.preview_image
+  assign secondary_image = product.media[1].preview_image
+
+  if settings.prod_show_videos
+    assign videos = product.media | where: 'media_type', 'video'
+    unless videos == blank
+      for source in videos[0].sources
+        if source != blank and source.format == 'mp4'
+          assign video_source = source
+          break
+        endif
+      endfor
+
+      assign mp4_url = video_source.url
+    endunless
+  endif
+-%}
+
+<div
+  id="product-block-{{ product.id }}"
+  class="
+    product-block
+    {% unless product.available %} sold-out{% endunless %}
+    {% if on_sale %} on-sale{% endif %}
+    {% if settings.prod_hover_show_image %}hover-image{% endif %}
+    {% if product.tags contains 'meta-layout-right' %}layout-right{% endif %}
+    {% if settings.prod_label_layout == 'marquee_on_hover' %} product-block--marquee-on-hover {% endif%}
+    {% if settings.quickbuy_enabled %}product-block--quickbuy{% endif %}
+    {% if mp4_url != blank %}product-block--video{% endif %}
+    {{ product_class }}
+  "
+  data-loop-index="{{ i }}"
+  {% if animate %}
+    data-cc-animate="{{ animation_type }}" data-cc-animate-delay="{{ animate | times: 0.15 }}s"
+  {% endif %}
+>
+  <div class="product-block__inner">
+    <div class="image {% if settings.prod_hover_show_image and product.media.size > 1 %}image--hover-second {% if primary_image.aspect_ratio == secondary_image.aspect_ratio %}image--same-aspect-ratio{% endif %}{% endif %}">
+      {% if settings.prod_label_layout contains 'marquee' %}
+        <div class="product-marquee">
+          {% render 'product-label', product: product %}
+        </div>
+      {% endif %}
+
+      <a
+        data-cc-animate-click
+        class="image-inner"
+        href="{{ product_url }}"
+        aria-label="{{ product.title | escape }}"
+        tabindex="-1"
+      >
+        <div class="image__first">
+          {% if mp4_url != blank %}
+            {% render 'inline-video', video: mp4_url, image: primary_image %}
+          {% else %}
+            {% render 'responsive-image', image: primary_image %}
+          {% endif %}
+
+          {% unless settings.prod_label_layout contains 'marquee' %}
+            {% render 'product-label', product: product %}
+          {% endunless %}
+        </div>
+
+        {% if settings.prod_hover_show_image and product.media.size > 1 %}
+          <div class="image__second">
+            {% render 'responsive-image', image: secondary_image, aspect_ratio: primary_image.aspect_ratio %}
+          </div>
+        {% endif %}
+      </a>
+    </div>
+    <a data-cc-animate-click href="{{ product_url }}" class="caption upper">
+      <span class="title">{{ product.title }} </span>
+
+      {% if show_vendor %}
+        <span class="vendor">{{ product.vendor }}</span>
+      {% endif %}
+
+      <div class="price">
+        <div class="product-block__price-wrapper">
+          {% if discount_code %}
+            {% assign multiplier = 100 | minus: discount_code.value.percentage %}
+            <div class="discount_code">
+              {{ product.price | times: multiplier | times: 0.01 | money }} с код
+              {{ discount_code.value.name }}
+            </div>
+          {% endif %}
+        </div>
+        <span class="product-price theme-money {% if on_sale %}sale{% endif %}">{{ product.price | money }}</span>
+        {% if on_sale -%}
+          <span class="was-price theme-money">{{ product.compare_at_price | money }}</span>
+        {%- endif %}
+      </div>
+
+      <a href="#looxReviews">
+        <div
+          class="loox-rating"
+          data-id="{{ product.id }}"
+          data-rating="{{ product.metafields.loox.avg_rating }}"
+          data-raters="{{ product.metafields.loox.num_reviews }}"
+          style="display:flex;flex-direction:row;justify-content:start"
+        ></div>
+      </a>
+
+      {% comment %}
+        {%- if settings.quickbuy_enabled -%}
+          <a href="{{ product_url }}" data-cc-quick-buy class="button alt cc-quick-buy-btn">
+            {{ 'products.listing.quick_view' | t }}
+          </a>
+        {%- endif -%}
+      {% endcomment %}
+    </a>
+
+    {{ product.metafields.custom.img_var }}
+
+    {% comment %} Inventory tracking on product page {% endcomment %}
+    <div id="variant-inventory" class="{% unless current_variant.available %} hide {% endunless %}">
+      {% if current_variant.inventory_management == 'shopify' and current_variant.inventory_policy != 'continue' %}
+        We have {{ current_variant.inventory_quantity }} in stock.
+      {% else %}
+
+      {% endif %}
+    </div>
+
+    {% if settings.show_product_block_reviews %}
+      <a data-cc-animate-click href="{{ product_url }}" class="themed-product-reviews" tabindex="-1">
+        <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    /* let promoCode = getPromoCodeFromUrl() || getPromoCodeFromLocalStorage();
+    const url = window.location.pathname;
+
+    if (promoCode && !url.includes('outlet')) {
+      const productBlock = document.getElementById('product-block-{{ product.id }}');
+      const priceElements = productBlock.querySelectorAll('.product-price:not(.promo-code-processed)');
+      const priceElement = priceElements[0];
+
+
+      const isVip = promoCode.indexOf('VIP') !== -1;
+      if (isVip) {
+        const promoCodeMatch = Object.keys(promoCodesByProductId).find((key) => {
+          const productIds = promoCodesByProductId[key];
+          return productIds.includes({{ product.id }});
+        });
+
+        if (promoCodeMatch) {
+          promoCode = promoCodeMatch;
+        } else {
+          return;
+        }
+      } else {
+        // TODO: Check if the promo code is valid
+        return; 
+      }
+
+      const existingDiscountElement = priceElement?.parentNode?.querySelector('.product-block__price-wrapper');
+      if (existingDiscountElement) {
+        existingDiscountElement.remove();
+      }
+
+      const productPriceStr = priceElement.textContent || priceElement.innerText;
+
+      const productPrice = parseFloat(productPriceStr.replace(/[^\d.]/g, ''));
+
+      // Calculate the discount
+      const discountPercentage = promoCode.slice(-2) || 20;
+      const multiplier = 1 - discountPercentage / 100;
+      const discountedPrice = productPrice * multiplier;
+
+      // Format the discounted price as money (adapt this to match your site's currency formatting)
+      const discountedPriceFormatted = new Intl.NumberFormat('bg-BG', { style: 'currency', currency: 'BGN' }).format(
+        discountedPrice
+      );
+
+      const discountElement = document.createElement('div');
+      discountElement.classList.add('product-block__price-wrapper'); // Add a class for styling if needed
+      discountElement.innerHTML = `<div class="discount_code" style="display: block;">${discountedPriceFormatted} с код ${promoCode}</div>`;
+
+      // Insert the new element above the current price element
+      priceElement.parentNode.insertBefore(discountElement, priceElement);
+      priceElement.classList.add('promo-code-processed');
+    }
+    */
+  });
+</script>

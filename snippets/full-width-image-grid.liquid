@@ -1,0 +1,7 @@
+<div class="full-width-image-grid">
+  {% for image in images %}
+    <div class="grid-image">
+      <img src="{{ image | img_url: '100x100' }}" alt="{{ image1.alt | escape }}">
+    </div>
+  {% endfor %}
+</div>

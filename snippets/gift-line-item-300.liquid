@@ -1,0 +1,27 @@
+{% assign variantId = '49899473830225' %}
+{% assign imageUrl = 'https://cdn.shopify.com/s/files/1/0573/1565/5835/files/DSC7527_5000x5000_fe61d07c-b474-4321-ad75-75541ca91a47.jpg?v=1730355308&width=320' %}
+{% assign title = 'ПОДАРЪК - Чантичка за телефон' %}
+
+{% comment %} DSC7527_5000x5000_fe61d07c-b474-4321-ad75-75541ca91a47 {% endcomment %}
+
+<li style="margin-bottom: 1em;" class="item clearfix">
+  <div class="col-image">
+    <img src="{{ imageUrl }}">
+  </div>
+  <div class="col-notimage">
+    <div class="desc">
+      <div class="title">
+        <span class="product-title">{{ title }}</span>
+      </div>
+      <div style="color: red">С тази поръчка получаваш безплатен подарък - Чантичка за телефон на стойност 99лв.!</div>
+      {% comment %}
+        Line Item Properties
+      {% endcomment %}
+    </div>
+
+    <div class="line-total">
+      <div class="original-price theme-money">{{ 9900 | money }}</div>
+      <div class="theme-money">{{ 0 | money }}</div>
+    </div>
+  </div>
+</li>

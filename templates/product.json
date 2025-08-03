@@ -1,0 +1,62 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "media_style": "one-column",
+        "variant_style": "underlined",
+        "cart_type": "",
+        "full_width": true,
+        "sticky_product_form": true,
+        "description_under_title": false,
+        "show_urgency_label": true,
+        "promotion_end_date": "12/02/2024 00:00:00",
+        "show_tax_and_shipping": false,
+        "show_sku": false,
+        "show_type": false,
+        "show_quantity_selector": false,
+        "enable_payment_button": true,
+        "enable_mobile_sticky_cart": false,
+        "title_above_image": true,
+        "show_backorder_text": true,
+        "show_inventory_notice": false,
+        "inventory_notice_threshold": 10,
+        "show_realtime_availability": true,
+        "show_pickup_availability": true,
+        "slide_nav_style": "dots",
+        "show_thumbnails": true,
+        "enable_zoom": true,
+        "enable_video_looping": false,
+        "scroll_to_variant_media": true,
+        "description_style": "accordion",
+        "tab_2_page": "",
+        "tab_3_page": "",
+        "show_size_chart": false,
+        "size_chart_variant": "Size",
+        "size_chart_page": ""
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "title": "You may also like",
+        "show_vendor": false,
+        "grid": 3
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recommendations"
+  ]
+}

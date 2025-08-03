@@ -1,0 +1,557 @@
+[
+  {
+    "key": "collections.filtering.show_results",
+    "bulgarian": "Покажи [x] резилтати ",
+    "greek": ""
+  },
+  {
+    "key": "collections.sorting.date_descending",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "collections.sorting.date_ascending",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "blogs.comments.success_moderated",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "general.404.subtext",
+    "bulgarian": "Страницата, които търсите, не съществува.",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.description",
+    "bulgarian": "ЕКСКЛУЗИВНА КОЛЕКЦИЯ САМО ЗА ИЗБРАНИ КЛИЕНТИ! Разкрийте нашата най-нова колекция преди всички останали.",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.signup_text",
+    "bulgarian": "Въведете имейла си, за да отключите таен код за достъп:",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.limited_time",
+    "bulgarian": "Достъпна само за ограничено време! Не пропускай!",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.cta_button",
+    "bulgarian": "ДА, ИСКАМ ДОСТЪП",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.unlock_text",
+    "bulgarian": "ОТКЛЮЧИ ЕКСКЛУЗИВНАТА КОЛЕКЦИЯ",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.code_text",
+    "bulgarian": "Въведи таен код за достъп:",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.code_label",
+    "bulgarian": "Код за достъп",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.code_placeholder",
+    "bulgarian": "Въведи твоя код тук",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.code_button_text",
+    "bulgarian": "ОТКЛЮЧИ КОЛЕКЦИЯТА",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.code_error_text",
+    "bulgarian": "Невалиден код. Моля, опитайте отново.",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.thank_you_text",
+    "bulgarian": "Благодарим ви! Вече имате достъп до нашата ексклузивна колекция.",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.view_collection_text",
+    "bulgarian": "РАЗГЛЕДАЙ КОЛЕКЦИЯТА",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.redirecting",
+    "bulgarian": "Успешно! Пренасочване към колекцията...",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.loading",
+    "bulgarian": "Обработка...",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.email_error",
+    "bulgarian": "Моля, въведете валиден имейл адрес",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.server_error",
+    "bulgarian": "Възникна грешка при обработката на заявката. Моля, опитайте отново.",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.email_sent_message",
+    "bulgarian": "Изпратихме имейл с кода на твоята електронна поща.",
+    "greek": ""
+  },
+  {
+    "key": "general.restricted_collection.back_to_email",
+    "bulgarian": "Въведи имейл отново",
+    "greek": ""
+  },
+  {
+    "key": "general.email_placeholder",
+    "bulgarian": "Въведи имейл",
+    "greek": ""
+  },
+  {
+    "key": "general.search.no_results",
+    "bulgarian": "Не бяха открити резултати за Вашето търсене  \"{{ terms }}\". Моля, опитайте с друга заявка!",
+    "greek": ""
+  },
+  {
+    "key": "general.now",
+    "bulgarian": "Сега",
+    "greek": ""
+  },
+  {
+    "key": "products.product.added_to_cart",
+    "bulgarian": "Продуктът е добавен в твоята количка!",
+    "greek": ""
+  },
+  {
+    "key": "products.product.popup_was_added",
+    "bulgarian": "Беше довавено към вашата количка ",
+    "greek": ""
+  },
+  {
+    "key": "products.product.with_code",
+    "bulgarian": "с код",
+    "greek": ""
+  },
+  {
+    "key": "products.product.price",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "products.product.save",
+    "bulgarian": "Спести",
+    "greek": ""
+  },
+  {
+    "key": "products.product.pre_sale_button",
+    "bulgarian": "ВЗЕМИ ЕКСКУЗИВНО С ОТСТЪПКА",
+    "greek": ""
+  },
+  {
+    "key": "products.product.pre_sale_success_title",
+    "bulgarian": "Очаквай съвсем скоро!",
+    "greek": ""
+  },
+  {
+    "key": "products.product.pre_sale_success_message",
+    "bulgarian": "Благодарим ти за интереса! Ще получиш имейл с екслузивно предложение, когато продуктът дебютира.",
+    "greek": ""
+  },
+  {
+    "key": "products.product.pre_sale_error_message",
+    "bulgarian": "Не можахме да регистрираме вашия интерес. Моля, опитайте отново по-късно.",
+    "greek": ""
+  },
+  {
+    "key": "products.product.now_is_your_chance",
+    "bulgarian": "Сега е твоят шанс",
+    "greek": ""
+  },
+  {
+    "key": "products.product.code_usage_notice",
+    "bulgarian": "*Повече от 40 клиента използваха този код в последните 24ч.",
+    "greek": ""
+  },
+  {
+    "key": "products.product.lowest_price_season",
+    "bulgarian": "НАЙ-НИСКА ЦЕНА ТОЗИ СЕЗОН",
+    "greek": ""
+  },
+  {
+    "key": "products.product.size",
+    "bulgarian": "Размер",
+    "greek": ""
+  },
+  {
+    "key": "products.product.watch_video_review",
+    "bulgarian": "Гледай видео ревю",
+    "greek": ""
+  },
+  {
+    "key": "products.product.colors",
+    "bulgarian": "Цветове",
+    "greek": ""
+  },
+  {
+    "key": "products.product.with_this_product_you_get",
+    "bulgarian": "С този продукт получаваш",
+    "greek": ""
+  },
+  {
+    "key": "products.product.exclusive_discount_20",
+    "bulgarian": "20% екслузивна отстъпка ако купиш СЕГА!",
+    "greek": ""
+  },
+  {
+    "key": "products.product.discount_10_message",
+    "bulgarian": "10% отстъпка. Добави продукти на обща стойност над 350 лв. зa да получиш 20%!",
+    "greek": ""
+  },
+  {
+    "key": "products.product.special_discount_message",
+    "bulgarian": "Специална отстъпка ако добавиш продукти на обща стойност над 200 лв.!",
+    "greek": ""
+  },
+  {
+    "key": "products.product.free_shipping",
+    "bulgarian": "Безплатна доставка",
+    "greek": ""
+  },
+  {
+    "key": "products.product.gift_phone_case",
+    "bulgarian": "Подарък <a style=\"text-decoration: underline;\" href=\"https://zarenabags.com/products/%D1%87%D0%B0%D0%BD%D1%82%D0%B8%D1%87%D0%BA%D0%B0-%D0%B7%D0%B0-%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD-%D1%81-%D0%BF%D1%80%D0%B8%D0%BD%D1%82\">чантичка за телефон</a> ако общата стойност на твоята поръчка е над 300 лв.",
+    "greek": ""
+  },
+  {
+    "key": "products.product.best_price_season",
+    "bulgarian": "Най-добрата цена този сезон ако купиш СЕГА!",
+    "greek": ""
+  },
+  {
+    "key": "products.product.with_discount_included",
+    "bulgarian": "с включена отстъпка",
+    "greek": ""
+  },
+  {
+    "key": "products.product.buy_for_amount_per_month",
+    "bulgarian": "КУПИ САМО ЗА {{ amount }} лв. / месец",
+    "greek": ""
+  },
+  {
+    "key": "products.product.three_months_no_markup",
+    "bulgarian": "за 3 месеца БЕЗ ОСКЪПЯВАНЕ с",
+    "greek": ""
+  },
+  {
+    "key": "products.product.complete_order_tbi",
+    "bulgarian": "За да завършиш поръчката, избери tbi bank като метод на плащане.",
+    "greek": ""
+  },
+  {
+    "key": "products.product.payment_schedule_note",
+    "bulgarian": "*След завършване на покупката ще можеш да избереш график за плащане.",
+    "greek": ""
+  },
+  {
+    "key": "products.product.complete",
+    "bulgarian": "Завърши",
+    "greek": ""
+  },
+  {
+    "key": "products.product.click_to_enlarge",
+    "bulgarian": "Кликни за да увеличиш",
+    "greek": ""
+  },
+  {
+    "key": "products.product.seen_on_instagram",
+    "bulgarian": "Видяно в Instagram",
+    "greek": ""
+  },
+  {
+    "key": "products.product.price_valid_for",
+    "bulgarian": "Тази цена е валидна още: ",
+    "greek": ""
+  },
+  {
+    "key": "products.product.day",
+    "bulgarian": "ден",
+    "greek": ""
+  },
+  {
+    "key": "products.product.days",
+    "bulgarian": "дни",
+    "greek": ""
+  },
+  {
+    "key": "products.product.hours_short",
+    "bulgarian": "ч.",
+    "greek": ""
+  },
+  {
+    "key": "products.product.minutes_short",
+    "bulgarian": "мин.",
+    "greek": ""
+  },
+  {
+    "key": "products.product.seconds_short",
+    "bulgarian": "сек.",
+    "greek": ""
+  },
+  {
+    "key": "products.labels.only_x_left",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "store_availability.general.pick_up_available_at_html",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "store_availability.general.pick_up_unavailable_at_html",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "store_availability.general.pick_up_available",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "store_availability.general.pick_up_currently_unavailable",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "customer.orders.fulfillment_status",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "customer.activate_account.cancel",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "customer.recover_password.title",
+    "bulgarian": "Пременете си паролата ",
+    "greek": ""
+  },
+  {
+    "key": "customer.order.billing_address",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "customer.order.total",
+    "bulgarian": "Крайна сума",
+    "greek": ""
+  },
+  {
+    "key": "customer.order.date",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "customer.order.fulfillment_status",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.issued.subtext",
+    "bulgarian": "Честито! Подариха ти ваучер за zarenabags.com:",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.issued.initial_value_html",
+    "bulgarian": "Стойност на ваучера: {{ value }}",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.issued.disabled",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.issued.redeem",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.issued.copied_to_clipboard",
+    "bulgarian": "Копирано!",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.select_value",
+    "bulgarian": "Избери стойност на ваучера:",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.details_heading",
+    "bulgarian": "Детайли за ваучера",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.recipient_name",
+    "bulgarian": "Име на получателя",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.recipient_name_placeholder",
+    "bulgarian": "Име на получателя",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.recipient_email",
+    "bulgarian": "Имейл на получателя",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.recipient_email_placeholder",
+    "bulgarian": "Имейл на получателя",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.gift_message",
+    "bulgarian": "Лично съобщение",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.gift_message_placeholder",
+    "bulgarian": "Добави своето лично съобщение тук",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.delivery_date",
+    "bulgarian": "Дата на доставка (по избор)",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.features_heading",
+    "bulgarian": "Характеристики на подаръчната карта",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.features.digital_delivery",
+    "bulgarian": "Цифрова подаръчна карта, доставена на имейла на получателя",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.features.valid_online",
+    "bulgarian": "Валидна за онлайн покупки в {{ shop_name }}",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.features.expiration",
+    "bulgarian": "6 месеца срок на валидност",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.features.easy_redeem",
+    "bulgarian": "Лесно използване при плащане",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.validation.required_fields",
+    "bulgarian": "Моля, попълнете всички задължителни полета правилно.",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.disclaimer",
+    "bulgarian": "Подаръчният ваучер ще бъде изпратен на имейл адреса на получателя след завършване на поръчката.",
+    "greek": ""
+  },
+  {
+    "key": "gift_cards.form.recipient_disclaimer",
+    "bulgarian": "Моля, въведете данните на получателя по-долу. За да получите ваучера на собствения си имейл, просто въведете вашите данни.",
+    "greek": ""
+  },
+  {
+    "key": "map.errors.address_query_limit_html",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "map.errors.auth_error",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "layout.header.menu_aria_label",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "layout.header.day",
+    "bulgarian": "ден",
+    "greek": ""
+  },
+  {
+    "key": "layout.header.days",
+    "bulgarian": "дни",
+    "greek": ""
+  },
+  {
+    "key": "layout.header.hours_short",
+    "bulgarian": "ч.",
+    "greek": ""
+  },
+  {
+    "key": "layout.header.minutes_short",
+    "bulgarian": "мин.",
+    "greek": ""
+  },
+  {
+    "key": "layout.header.seconds_short",
+    "bulgarian": "сек.",
+    "greek": ""
+  },
+  {
+    "key": "layout.header.codes_remaining",
+    "bulgarian": "Остават само още %CODE_NAME% кода",
+    "greek": ""
+  },
+  {
+    "key": "cart.general.checkout",
+    "bulgarian": "ЗАВЪРШИ ПОРЪЧКАТА",
+    "greek": ""
+  },
+  {
+    "key": "cart.general.taxes_and_shipping_policy_at_checkout_html",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "cart.general.free_shipping",
+    "bulgarian": "Безплатна доставка и преглед",
+    "greek": ""
+  },
+  {
+    "key": "storefront_password.general.powered_by",
+    "bulgarian": "",
+    "greek": ""
+  },
+  {
+    "key": "date_formats.month_date_year",
+    "bulgarian": "%B %d, %Y",
+    "greek": ""
+  },
+  {
+    "key": "shopify.checkout.shipping.shipping_information_required_notice",
+    "bulgarian": "Въведете офис на SPEEDY или адрес за доставка, за БЕЗПЛАТНА доставка.",
+    "greek": ""
+  }
+]
