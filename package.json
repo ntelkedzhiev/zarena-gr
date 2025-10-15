@@ -4,6 +4,6 @@
     "prettier": "^2.7.1"
   },
   "scripts": {
-    "start": "shopify theme dev --store https://newbegininng2021.myshopify.com"
+    "start": "shopify theme dev --store https://zarena-gr.myshopify.com/"
   }
 }
