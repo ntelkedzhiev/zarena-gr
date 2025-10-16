@@ -9,7 +9,10 @@
     <!-- Comfortaa Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
 
     {% comment %} <link rel="stylesheet" type="text/css" href="slick/slick.css"/> {% endcomment %}
     {% comment %} Add the new slick-theme.css if you want the default styling {% endcomment %}
@@ -149,35 +152,6 @@
 
     <meta name="facebook-domain-verification" content="h0gzrbyvrtcn97khs1huu450m5d26w">
 
-    <!-- Facebook Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '193537259465273');
-      fbq('track', 'PageView');
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=193537259465273&ev=PageView&noscript=1"
-    ></noscript>
-    <!-- End Facebook Pixel Code -->
     {% render 'ot-cookies' %}
 
     <link rel="stylesheet" href="{{ 'lightbox.min.css' | asset_url }}" type="text/css" media="all">
@@ -366,7 +340,7 @@
     <script type="text/javascript" src="{{ 'slick.min.js' | asset_url }}"></script>
 
     {{ '//cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/booster-page-speed-optimizer.js?23' | script_tag }}
-    
+
     <!-- Popup scripts -->
     <script src="{{ 'influencer-config.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'influencer-popup.js' | asset_url }}" defer="defer"></script>
