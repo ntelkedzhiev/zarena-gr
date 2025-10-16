@@ -30,18 +30,6 @@
     y.parentNode.insertBefore(t, y);
   })(window, document, 'clarity', 'script', 'rnfoyh9l4w');
 </script>
-
-<!-- Global site tag (gtag.js) - Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-300483239"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-  gtag('config', 'AW-300483239');
-</script>
-
 <script>
   window.discountSettings = {
     showDiscountCodePromotion: {{ section.settings.show_discount_code_promotion | json }},
@@ -77,10 +65,16 @@
         const remainingTimeContainer = document.getElementById('remaining_time');
         if (remainingTimeContainer) {
           if (hours > 24) {
-            document.getElementById('remaining_time').innerHTML = '' + (days === 1 ? '1 {{ "header.day" | t }}' : days + ' {{ "header.days" | t }}');
+            document.getElementById('remaining_time').innerHTML =
+              '' + (days === 1 ? '1 {{ "header.day" | t }}' : days + ' {{ "header.days" | t }}');
           } else {
             document.getElementById('remaining_time').innerHTML =
-              hours + '{{ "header.hours_short" | t }} ' + minutes + '{{ "header.minutes_short" | t }} ' + seconds + '{{ "header.seconds_short" | t }} →';
+              hours +
+              '{{ "header.hours_short" | t }} ' +
+              minutes +
+              '{{ "header.minutes_short" | t }} ' +
+              seconds +
+              '{{ "header.seconds_short" | t }} →';
           }
         }
 
