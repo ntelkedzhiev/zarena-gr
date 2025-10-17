@@ -302,7 +302,7 @@
         {% if product.metafields.custom.special_discount_code %}
           {% assign multiplier = 100 | minus: product.metafields.custom.special_discount_code.value.percentage %}
           <div class="special-price__label hidden-desktop">
-            {{ product.price | times: multiplier | times: 0.01 | money }} с код
+            {{ product.price | times: multiplier | times: 0.01 | money }} {{ 'products.product.with_code' | t }}
             {{ product.metafields.custom.special_discount_code.value.name }}
           </div>
         {% endif %}
@@ -310,7 +310,7 @@
       {% if product.metafields.custom.special_discount_code %}
         {% assign multiplier = 100 | minus: product.metafields.custom.special_discount_code.value.percentage %}
         <div class="special-price__label hidden-mobile">
-          {{ product.price | times: multiplier | times: 0.01 | money }} с код
+          {{ product.price | times: multiplier | times: 0.01 | money }} {{ 'products.product.with_code' | t }}
           {{ product.metafields.custom.special_discount_code.value.name }}
         </div>
       {% endif %}

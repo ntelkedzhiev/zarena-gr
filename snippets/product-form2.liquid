@@ -135,7 +135,7 @@
           {% endif %}
         </div>
         {% if product.metafields.custom.special_discount_code %}
-          <div class="special-discount-code-used__label" >*Повече от 40 клиента използваха този код в последните 24ч.</div>
+          <div class="special-discount-code-used__label" >{{ 'products.product.code_usage_notice' | t }}</div>
         {% endif %}
         {% if section.settings.show_urgency_label and product.compare_at_price > product.price %}
           <div class="product__promotion-urgency-label"></div>
@@ -274,7 +274,7 @@
             {% comment %}
               {% if price >= 100 or compare_at_price >= 100 and compare_at_price > price %}
                 <a href="{{ shop.shipping_policy.url }}" class="selling-point product-single__free-shipping"
-                  >Безплатна доставка над 100лв.</a
+                  >{{ 'products.product.free_shipping_over_amount' | t }}</a
                 >
               {% endif %}
             {% endcomment %}
@@ -531,7 +531,7 @@
           </div>
           {% if progressive_discount_feature and total_price > 20000 %}
             <div style="color: #c81853; font-size: 15px; text-transform:lowercase;">
-              с включена отстъпка
+              {{ 'products.product.with_discount_included' | t }}
             </div>
           {% endif %}
         </button>
@@ -554,7 +554,7 @@
           </div>
           {% if progressive_discount_feature and total_price > 20000 %}
             <div style="color: #c81853; font-size: 15px; text-transform:lowercase; text-align: center; margin: 0 auto; margin-top:2px; width: 100%;">
-              с включена отстъпка
+              {{ 'products.product.with_discount_included' | t }}
             </div>
           {% endif %}
         </button>

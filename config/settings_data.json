@@ -168,7 +168,7 @@
           "mobile_logo_width": 140,
           "show_announcement": true,
           "announcement_home_only": false,
-          "announcement_text": "<span style=\"font-size:14px;font-weight:bold\"><a href=\"https://zarenabags.com/collections/produkti\">Безплатна доставка с Box Now + 🎁*</a></span>",
+          "announcement_text": "<span style=\"font-size:14px;font-weight:bold\"><a href=\"https://zarenabags.com/collections/products\">Δωρεάν παράδοση με Box Now + 🎁*</a></span>",
           "announcement_text_size": 15,
           "announcement_link": "shopify://collections/produkti",
           "show_promotion": false,
@@ -417,7 +417,7 @@
           "popup_dismiss_for_days": 2,
           "position": "bottom-right",
           "title": "Спести 5% за първа поръчка",
-          "text": "<p>Абонирай се за най-новите тенденции и промоции!</p>",
+          "text": "<p>Εγγραφείτε για να λαμβάνετε πληροφορίες για τις τελευταίες τάσεις της μόδας, καθώς και  για προσφορές.</p>",
           "show_newsletter": true,
           "show_social_icons": true
         }
@@ -453,7 +453,7 @@
             "type": "newsletter",
             "settings": {
               "title": "Новини и промоции",
-              "text": "<p>Абонирай се за най-новите тенденции и промоции!</p>",
+              "text": "<p>Εγγραφείτε για να λαμβάνετε πληροφορίες για τις τελευταίες τάσεις της μόδας, καθώς και  για προσφορές.</p>",
               "show_social_icons_newsletter": false
             }
           }
@@ -474,7 +474,7 @@
       "1601482299225": {
         "type": "featured-collection",
         "settings": {
-          "title": "🔥 Най-купувани продукти този месец",
+          "title": "🔥 Τα πιο ευπώλητα προϊόντα αυτόν τον μήνα",
           "collection": "най-купувани-продукти-този-месец",
           "layout": "columns",
           "show_vendor": false,
@@ -728,7 +728,7 @@
           "fcd2ab33-523f-44f8-9042-2c2d2314725f": {
             "type": "collection_info",
             "settings": {
-              "collection_name": "Нова Колекция",
+              "collection_name": "Νέα συλλογή",
               "collection": "new-collection2023",
               "placeholder_image": "shopify://shop_images/viber_image_2023-03-06_10-52-01-240.jpg"
             }
@@ -752,7 +752,7 @@
           "83d74085-9836-4dd3-84a5-cc0e65921df3": {
             "type": "collection_info",
             "settings": {
-              "collection_name": "Раници",
+              "collection_name": "Σακίδια πλάτης",
               "collection": "ranitsa",
               "placeholder_image": "shopify://shop_images/085_3390.jpg"
             }
@@ -760,7 +760,7 @@
           "56dee240-b923-4b1f-9922-60aa6150d719": {
             "type": "collection_info",
             "settings": {
-              "collection_name": "Аксесоари",
+              "collection_name": "Αξεσουάρ",
               "collection": "aksesoari",
               "placeholder_image": "shopify://shop_images/085_3918.jpg"
             }
@@ -783,7 +783,7 @@
           "1f51f3f4-03c7-471b-a750-d604b496c6d2"
         ],
         "settings": {
-          "title": "Избери своята чанта:",
+          "title": "Επιλέξτε την τσάντα που σας ταιριάζει",
           "section_background": "#ffffff",
           "grid": 3,
           "rows": 2,

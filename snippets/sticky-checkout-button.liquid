@@ -9,9 +9,9 @@
     <div class="sticky-button__title">{{ 'cart.general.checkout' | t }} ({{ cart.item_count }})</div>
     <div>
       {% if cart.total_price > 10000 %}
-        Безплатна доставка и преглед
+        {{ 'cart.general.free_shipping_and_preview' | t }}
       {% else %}
-        опция преглед
+        {{ 'cart.general.preview_option' | t }}
       {% endif %}
     </div>
     <div class="cart-icon--basket2" style="position: absolute;right: 12px; bottom:18px">

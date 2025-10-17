@@ -204,9 +204,6 @@
               <span class="amount theme-money">{{ cart.total_price | money }}</span>
             </div>
           </div>
-          <div class="cart-loan-payment-row">
-            <div class="cart-loan-payment">или {{ cart.total_price | divided_by: 3 | money }}. / месец с tbi bank</div>
-          </div>
         </div>
 
         {% comment %}
@@ -215,12 +212,11 @@
           </div>
         {% endcomment %}
         <div style="margin-top:16px; font-size: 0.9rem; text-align:justify">
-          Един (или повече) от добавените продукти е с
-          <span style="text-decoration:underline">ограничено количество</span> и се изчерпва бързо!
+          {{ 'cart.general.limited_quantity_warning' | t }}
         </div>
         <div class="cart-cta__section">
           <div class="cart-urgency__label">
-            Количката ти се пази още <span id="session-count-down">10мин. 0сек.</span>
+            {{ 'cart.general.cart_timer_message' | t }} <span id="session-count-down">10мин. 0сек.</span>
           </div>
           <input
             type="submit"

@@ -35,11 +35,11 @@
     </details>
   {% endif %}
 
-  {% if product.metafields.descriptors.care_guide %}
+  {% if product.metafields.custom.care_guide %}
     <details class="product-feature">
       <summary>{{ 'products.product.care_guide' | t }}</summary>
       <div class="product-feature-content" data-feature-content>
-        {{ product.metafields.descriptors.care_guide | newline_to_br }}
+        {{ product.metafields.custom.care_guide | newline_to_br }}
       </div>
     </details>
   {% endif %}

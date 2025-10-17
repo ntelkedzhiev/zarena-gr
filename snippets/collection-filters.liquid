@@ -11,7 +11,7 @@
             <summary class="filter-group-summary">
               <div>
                 {%- if filter.label == 'Цена' -%}
-                  <span>{{ filter.label }}</span>
+                  <span>{{ 'products.filters.price' | t }}</span>
                 {%- else -%}
                   {% assign snake_case_label = filter.label | replace: ' ', '_' | downcase %}
                   {% assign namespaced_label = 'products.product.' | append: snake_case_label %}

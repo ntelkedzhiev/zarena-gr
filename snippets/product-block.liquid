@@ -94,7 +94,7 @@
           {% if discount_code %}
             {% assign multiplier = 100 | minus: discount_code.value.percentage %}
             <div class="discount_code">
-              {{ product.price | times: multiplier | times: 0.01 | money }} с код
+              {{ product.price | times: multiplier | times: 0.01 | money }} {{ 'products.product.with_code' | t }}
               {{ discount_code.value.name }}
             </div>
           {% endif %}
