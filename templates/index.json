@@ -14,7 +14,6 @@
       "blocks": {
         "image_pa3KVH": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Zarena_nova-kol2_desktop-slider_GR.jpg",
             "mobile_image": "shopify://shop_images/Zarena_nova-kol2_mobile-slider_GR.jpg",
@@ -131,6 +130,7 @@
         },
         "image_3eQzgX": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "gradient_overlay": false,
             "desktop_image_position": "center center",
@@ -153,6 +153,7 @@
         },
         "image_Dy7RBA": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "gradient_overlay": false,
             "desktop_image_position": "center center",
@@ -175,6 +176,7 @@
         },
         "image_a99qGD": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "gradient_overlay": false,
             "desktop_image_position": "center center",
