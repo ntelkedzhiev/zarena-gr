@@ -16,8 +16,8 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Desktop_Slide_Obichai-s_1.jpg",
-            "mobile_image": "shopify://shop_images/Mobile_Slide_Obichai-s.jpg",
+            "image": "shopify://shop_images/Zarena_nova-kol2_desktop-slider_GR.jpg",
+            "mobile_image": "shopify://shop_images/Zarena_nova-kol2_mobile-slider_GR.jpg",
             "gradient_overlay": false,
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
@@ -41,8 +41,6 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Desktop_Slide_LastChance222.jpg",
-            "mobile_image": "shopify://shop_images/Mobile_Slide_LastChance.jpg",
             "gradient_overlay": false,
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
@@ -66,8 +64,6 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Zarena_outlet_desktop_slider.jpg",
-            "mobile_image": "shopify://shop_images/Zarena_outlet_desktop_slider-mobile.jpg",
             "gradient_overlay": false,
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
@@ -91,8 +87,6 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Zarena_nova-kol-prelaunch_desktop_slider.jpg",
-            "mobile_image": "shopify://shop_images/Zarena_nova-kol-prelaunch_mobile_slider.jpg",
             "gradient_overlay": false,
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
@@ -116,8 +110,6 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Zarena_bestsellers-25__1_banner_desktop.jpg",
-            "mobile_image": "shopify://shop_images/Zarena_bestsellers-25__1_banner_mobile.jpg",
             "gradient_overlay": false,
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
@@ -140,8 +132,6 @@
         "image_3eQzgX": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Zarena_L-bqgstvo_desktop-slider.jpg",
-            "mobile_image": "shopify://shop_images/Zarena_L-bqgstvo_mobile-slider_c3dc04e4-ff32-4016-9370-dd18d5650da4.jpg",
             "gradient_overlay": false,
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
@@ -164,8 +154,6 @@
         "image_Dy7RBA": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Zarena_nova-kol_desktop-slider_2.jpg",
-            "mobile_image": "shopify://shop_images/Zarena_nova-kol_mobile-slider_1.jpg",
             "gradient_overlay": false,
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
@@ -188,8 +176,6 @@
         "image_a99qGD": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Zarena_duo_1_desktop-slider.jpg",
-            "mobile_image": "shopify://shop_images/Zarena_duo_1_mobile-slider.jpg",
             "gradient_overlay": false,
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
@@ -240,48 +226,42 @@
           "type": "collection_info",
           "settings": {
             "collection_name": "Нова Колекция",
-            "collection": "prolet-lyato-25",
-            "placeholder_image": "shopify://shop_images/DSC7421.jpg"
+            "collection": "prolet-lyato-25"
           }
         },
         "4e5c272b-7e74-4bb2-b9e1-60a894bae9d9": {
           "type": "collection_info",
           "settings": {
             "collection_name": "Малки Чанти",
-            "collection": "malka-chanta",
-            "placeholder_image": "shopify://shop_images/DSC7189_6ae2195a-3e1b-46d4-b3d2-0d19ce768a3d.jpg"
+            "collection": "malka-chanta"
           }
         },
         "bbdff939-ecda-4d48-b728-f5f7f655009d": {
           "type": "collection_info",
           "settings": {
             "collection_name": "Големи Чанти",
-            "collection": "golyama-chanta",
-            "placeholder_image": "shopify://shop_images/DSC7526_840046e0-5b0e-4592-95b2-0c4ce8effa35.jpg"
+            "collection": "golyama-chanta"
           }
         },
         "83d74085-9836-4dd3-84a5-cc0e65921df3": {
           "type": "collection_info",
           "settings": {
             "collection_name": "Раници",
-            "collection": "ranitsa",
-            "placeholder_image": "shopify://shop_images/Zarena-model--29_5000x5000_3dac2e6f-111c-4c03-9c0d-722256be5172_1.jpg"
+            "collection": "ranitsa"
           }
         },
         "56dee240-b923-4b1f-9922-60aa6150d719": {
           "type": "collection_info",
           "settings": {
             "collection_name": "Аксесоари",
-            "collection": "aksesoari",
-            "placeholder_image": "shopify://shop_images/zarena0041_copy.png"
+            "collection": "aksesoari"
           }
         },
         "collection_info_PQXnAP": {
           "type": "collection_info",
           "settings": {
             "collection_name": "Колани",
-            "collection": "колани",
-            "placeholder_image": "shopify://shop_images/9697_5000x5000_07d9ff5c-9d6f-4271-9c20-013eedc0d359.jpg"
+            "collection": "колани"
           }
         }
       },
@@ -308,7 +288,6 @@
       "settings": {
         "title": "ЕКСЛУЗИВНО НАМАЛЕНИЕ",
         "button_text": "Купи сега",
-        "promotion_image": "shopify://shop_images/galia-cropped.jpg",
         "product": "galia-chanta-za-ramo-kros-bodi-cherna"
       }
     },
@@ -317,7 +296,6 @@
       "disabled": true,
       "settings": {
         "video": "https://www.f4dsite.eu/new-video.mp4",
-        "placeholder_image": "shopify://shop_images/4_2.png",
         "subheading": "ZARENA",
         "title": "Бъди вдъхновена всеки ден",
         "title_size": 60,
@@ -345,7 +323,6 @@
         "text_alignment": "left",
         "text_width": 62,
         "button_style": "auto",
-        "image": "shopify://shop_images/img_71162edd-d18b-4c59-9c61-1ed5ccdcf547.jpg",
         "video": "",
         "image_width": 100,
         "image_position": "right",
@@ -360,7 +337,6 @@
         "1601554848772-0": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/nc1_a71db269-e8d7-4cf6-8420-3c4d9622e90e.jpg",
             "video": "",
             "desktop_image_position": "top center",
             "mobile_image_position": "bottom center",
@@ -375,7 +351,6 @@
         "1601560664254": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/2f0ccce9ecde90e1caf7c12bb459c2f3.jpg",
             "video": "",
             "desktop_image_position": "bottom center",
             "mobile_image_position": "bottom center",
@@ -390,7 +365,6 @@
         "1601554848772-2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/NC-1_c490a633-2ebe-457b-8e93-1ce31f706273.jpg",
             "video": "",
             "desktop_image_position": "bottom center",
             "mobile_image_position": "bottom center",
