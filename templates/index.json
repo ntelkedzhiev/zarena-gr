@@ -235,35 +235,40 @@
           "type": "collection_info",
           "settings": {
             "collection_name": "Ώμου",
-            "collection": "omou"
+            "collection": "omou",
+            "placeholder_image": "shopify://shop_images/DSC0547_6b21a00d-96d4-4834-9294-a370c884f0f7.jpg"
           }
         },
         "bbdff939-ecda-4d48-b728-f5f7f655009d": {
           "type": "collection_info",
           "settings": {
             "collection_name": "Χιαστί",
-            "collection": "xiasti"
+            "collection": "xiasti",
+            "placeholder_image": "shopify://shop_images/DSC0427_1c572509-77fb-4d1a-aac2-51079fcc0030.jpg"
           }
         },
         "83d74085-9836-4dd3-84a5-cc0e65921df3": {
           "type": "collection_info",
           "settings": {
             "collection_name": "Tote",
-            "collection": "tote"
+            "collection": "tote",
+            "placeholder_image": "shopify://shop_images/DSC0541_2.jpg"
           }
         },
         "56dee240-b923-4b1f-9922-60aa6150d719": {
           "type": "collection_info",
           "settings": {
             "collection_name": "Σακίδια",
-            "collection": "sakidia"
+            "collection": "sakidia",
+            "placeholder_image": "shopify://shop_images/085_60261122_86b50f16-ae59-420f-a80d-333fe489706f.jpg"
           }
         },
         "collection_info_PQXnAP": {
           "type": "collection_info",
           "settings": {
             "collection_name": "Ζώνες",
-            "collection": "zones"
+            "collection": "zones",
+            "placeholder_image": "shopify://shop_images/DSC0494_76f4dd6a-ea5f-43b7-ab78-12b3de5fc3c0.jpg"
           }
         }
       },
