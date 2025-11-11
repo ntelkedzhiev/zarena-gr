@@ -162,7 +162,6 @@
           "desktop_navigation": "inline",
           "nav_opacity": "opaque_on_scroll_alt",
           "nav_positioning": "peek",
-          "logo": "shopify://shop_images/logo-zarena.png",
           "use_alt_logo_when_active": true,
           "desktop_logo_width": 200,
           "mobile_logo_width": 140,
@@ -430,7 +429,6 @@
             "settings": {
               "title": "",
               "text": "<p>Създадохме малък семеен бизнес за чанти, но пораснахме бързо, произвеждайки продукти на водещи световни марки за дамски чанти и аксесоари от кожа.<br/></p><p>С високо ниво на качество и оптимизирани процеси, ние създаваме всеки продукт с любов и внимание.<br/></p>",
-              "image": "shopify://shop_images/logo-zarena_7ce151fc-648b-4bd7-978c-a3f7ab335c03.png",
               "image_width": 200,
               "show_social_icons": true
             }
@@ -446,13 +444,13 @@
             "type": "menu",
             "settings": {
               "title": "Продукти",
-              "menu": "customer"
+              "menu": ""
             }
           },
           "1601536182566": {
             "type": "newsletter",
             "settings": {
-              "title": "Новини и промоции",
+              "title": "News",
               "text": "<p>Εγγραφείτε για να λαμβάνετε πληροφορίες για τις τελευταίες τάσεις της μόδας, καθώς και  για προσφορές.</p>",
               "show_social_icons_newsletter": false
             }
