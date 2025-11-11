@@ -18,6 +18,246 @@
         "name": "boolean",
         "category": "TRUE_FALSE"
       }
+    },
+    {
+      "key": "img_var",
+      "namespace": "custom",
+      "name": "Img.var",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "special_discount_code",
+      "namespace": "custom",
+      "name": "Special Discount Code",
+      "description": "",
+      "type": {
+        "name": "json",
+        "category": "JSON"
+      }
+    },
+    {
+      "key": "collection_handle",
+      "namespace": "custom",
+      "name": "Collection Handle",
+      "description": "Id of collection",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "functionality",
+      "namespace": "custom",
+      "name": "Functionality",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "description",
+      "namespace": "custom",
+      "name": "Description",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "size_and_dimensions",
+      "namespace": "custom",
+      "name": "Size and dimensions",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "materials",
+      "namespace": "custom",
+      "name": "Materials",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "why_our_products",
+      "namespace": "custom",
+      "name": "Why our products",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "real_life_image_1",
+      "namespace": "custom",
+      "name": "Real Life Image 1",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "real_life_image_2",
+      "namespace": "custom",
+      "name": "Real Life Image 2",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "real_life_image_3",
+      "namespace": "custom",
+      "name": "Real Life Image 3",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "color_text",
+      "namespace": "product",
+      "name": "Color",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "new",
+      "namespace": "filter",
+      "name": "Header new filter",
+      "description": "",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "promotion",
+      "namespace": "filter",
+      "name": "Header promotion filter",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "type",
+      "namespace": "filter",
+      "name": "Header type filter",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "preorder",
+      "namespace": "custom",
+      "name": "Preorder",
+      "description": "",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "video_mobile",
+      "namespace": "content",
+      "name": "Product video (mobile)",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "video_desktop",
+      "namespace": "content",
+      "name": "Product video (desktop)",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "progressive_discount",
+      "namespace": "promotions",
+      "name": "Progressive discount",
+      "description": "",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "presale",
+      "namespace": "custom",
+      "name": "Presale",
+      "description": "",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    },
+    {
+      "key": "instagram_posts",
+      "namespace": "custom",
+      "name": "Instagram Posts",
+      "description": "",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "availability_date",
+      "namespace": "custom",
+      "name": "Product Availability Date",
+      "description": "Expected date when the product will be back in stock",
+      "type": {
+        "name": "date",
+        "category": "DATE_TIME"
+      }
+    },
+    {
+      "key": "care_guide",
+      "namespace": "custom",
+      "name": "Care guide",
+      "description": "custom.care_guide",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "color-pattern",
+      "namespace": "shopify",
+      "name": "Color",
+      "description": "Defines the primary color or pattern, such as blue or striped",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
     }
   ],
   "variant": [
