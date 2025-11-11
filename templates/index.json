@@ -224,13 +224,6 @@
     "1663775258d63e31cc": {
       "type": "featured-collections",
       "blocks": {
-        "fcd2ab33-523f-44f8-9042-2c2d2314725f": {
-          "type": "collection_info",
-          "settings": {
-            "collection_name": "Συλλογή F-Χ 25/26",
-            "collection": "prolet-lyato-25"
-          }
-        },
         "4e5c272b-7e74-4bb2-b9e1-60a894bae9d9": {
           "type": "collection_info",
           "settings": {
@@ -273,7 +266,6 @@
         }
       },
       "block_order": [
-        "fcd2ab33-523f-44f8-9042-2c2d2314725f",
         "4e5c272b-7e74-4bb2-b9e1-60a894bae9d9",
         "bbdff939-ecda-4d48-b728-f5f7f655009d",
         "83d74085-9836-4dd3-84a5-cc0e65921df3",
@@ -423,7 +415,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "🔥 Τα πιο ευπώλητα προϊόντα αυτόν τον μήνα",
-        "collection": "bestsellers-month",
+        "collection": "tsavtes",
         "layout": "columns",
         "show_vendor": false,
         "grid": 3,
