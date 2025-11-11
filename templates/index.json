@@ -248,15 +248,15 @@
         "83d74085-9836-4dd3-84a5-cc0e65921df3": {
           "type": "collection_info",
           "settings": {
-            "collection_name": "Раници",
-            "collection": "ranitsa"
+            "collection_name": "Tote",
+            "collection": "tote"
           }
         },
         "56dee240-b923-4b1f-9922-60aa6150d719": {
           "type": "collection_info",
           "settings": {
-            "collection_name": "Аксесоари",
-            "collection": "aksesoari"
+            "collection_name": "Σακίδια",
+            "collection": "sakidia"
           }
         },
         "collection_info_PQXnAP": {
