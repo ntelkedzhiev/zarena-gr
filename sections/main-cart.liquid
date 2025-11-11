@@ -167,11 +167,13 @@
             {% render 'gift-line-item' %}
           {% endif %}
         {% endcomment %}
+        {% comment %}
         {% if cart.checkout_charge_amount > 30000 %}
           {% render 'gift-line-item-200' %}
         {% elsif cart.checkout_charge_amount > 10000 %}
           {% render 'gift-line-item' %}
         {% endif %}
+        {% endcomment %}
       </ul>
 
       {% comment %}
@@ -216,7 +218,7 @@
         </div>
         <div class="cart-cta__section">
           <div class="cart-urgency__label">
-            {{ 'cart.general.cart_timer_message' | t }} <span id="session-count-down">10мин. 0сек.</span>
+            {{ 'cart.general.cart_timer_message' | t }} <span id="session-count-down">10λεπ. 0δευτ.</span>
           </div>
           <input
             type="submit"
@@ -303,7 +305,7 @@
     let remaining = 600;
     const timerId = setInterval(function () {
       remaining -= 1;
-      const formattedString = `${Math.floor(remaining / 60)}мин. ${remaining % 60}сек.`;
+      const formattedString = `${Math.floor(remaining / 60)}λεπ. ${remaining % 60}δευτ.`;
       sessionCountDownLabel.text(formattedString);
       if (remaining === 0) {
         clearInterval(timerId);

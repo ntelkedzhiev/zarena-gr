@@ -1,4 +1,4 @@
-{% assign buttonText = 'Разгледай модел' %}
+{% assign buttonText = 'Δείτε το μοντέλο' %}
 {% assign productName = settings.product.title | split: " " | first %}
 {% assign productUrl = settings.product.url %}
 
@@ -6,7 +6,7 @@
     <div class="customer-review">
         <div class="review-details">
             <div class="review-purchase-info">
-                <p>{{ settings.customer_name }}, закупила <a class="link-display" href="{{ productUrl }}">{{ productName }}</a>:
+                <p>{{ settings.customer_name }}, αγόρασε <a class="link-display" href="{{ productUrl }}">{{ productName }}</a>:
                 <a class="hidden-mobile" href="{{ productUrl }}"><img class="product-image-review" src="{{ settings.product.images[0] | image_url: width: 480, height: 480 }}" loading="lazy"/></a>
             </div>
             <div class="review-text">
