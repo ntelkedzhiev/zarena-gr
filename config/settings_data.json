@@ -157,11 +157,12 @@
           "156d1764-3c94-4e86-b21e-6fdb4eb427c4"
         ],
         "settings": {
-          "menu_linklist": "main-menu",
+          "menu_linklist": "main-menu-1",
           "nav_featured_link": "СЕЗОННО НАМАЛЕНИЕ ДО -50%",
           "desktop_navigation": "inline",
           "nav_opacity": "opaque_on_scroll_alt",
           "nav_positioning": "peek",
+          "logo": "shopify://shop_images/logo-zarena-header.png",
           "use_alt_logo_when_active": true,
           "desktop_logo_width": 200,
           "mobile_logo_width": 140,
