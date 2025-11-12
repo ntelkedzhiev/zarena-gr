@@ -437,7 +437,7 @@
           "1601536195594": {
             "type": "menu",
             "settings": {
-              "title": "Информация",
+              "title": "Πληροφορίες",
               "menu": "footer"
             }
           },
@@ -464,7 +464,7 @@
           "1601536182566"
         ],
         "settings": {
-          "lower_menu": "",
+          "lower_menu": "footer",
           "show_payment_icons": true,
           "show_locale_selector": true,
           "show_currency_selector": true
