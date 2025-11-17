@@ -736,8 +736,17 @@ h1.product-single__title {
     font-weight: 700;
 }
 
+.theme-modal.theme-modal--small>.inner .links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
 .theme-modal.theme-modal--small>.inner .links .button {
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #play-video-btn {
