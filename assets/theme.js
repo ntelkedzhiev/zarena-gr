@@ -6187,7 +6187,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     // Fetch cart data and update modal content
     $.getJSON('/cart.js', function(cart) {
       const cartValue = cart.total_price / 100; // Convert to dollars
-      const targetValue = 300;
+      const targetValue = 200;
       const remainingValue = targetValue - cartValue;
       if (remainingValue <= 0) {
         return;
@@ -6200,7 +6200,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           <div class="progress-bar-container">
               <div class="progress-bar" style="width: ${progressPercentage}%;"></div>
           </div>
-          <p class="progress-message">Добави още продукти на стойност ${remainingValue.toFixed(2)} лв. и получи подарък - чантичка за телефон!</p>
+          <p class="progress-message">Προσθέστε προϊόντα αξίας ${remainingValue.toFixed(2)} ευρώ ακόμα και λάβετε δώρο - τσαντάκι για κινητό!</p>
       `;
 
       // Insert the progress bar and message above the action buttons
