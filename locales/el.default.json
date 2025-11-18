@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "collections": {
     "general": {
@@ -228,7 +237,6 @@
       "collection_handle": "Μοντέλο",
       "header_new_filter": "Προστέθηκαν τελευταία",
       "price": "",
-      "with_code": "με κωδικό",
       "hurry_only_x_left": "Βιαστείτε, απομένουν μόνο {{ count }} διαθέσιμα τεμάχια",
       "code_usage_notice": "*Περισσότεροι από 40 πελάτες χρησιμοποίησαν αυτόν τον κωδικό τις τελευταίες 24 ώρες",
       "free_shipping_over_amount": "Δωρεάν αποστολή για παραγγελίες άνω των 50 ευρώ",
@@ -240,7 +248,6 @@
       "pre_sale_error_message": "Δεν μπορέσαμε να καταγράψουμε το ενδιαφέρον σας. Παρακαλώ δοκιμάστε ξανά αργότερα.",
       "pre_sale_continue_shopping": "Συνεχίστε τις αγορές σας",
       "now_is_your_chance": "Τώρα είναι η ευκαιρία σας",
-      "code_usage_notice": "*Περισσότεροι από 40 πελάτες χρησιμοποίησαν αυτόν τον κωδικό τις τελευταίες 24 ώρες",
       "lowest_price_season": "ΧΑΜΗΛΟΤΕΡΗ ΤΙΜΗ ΑΥΤΗ ΤΗ ΣΕΖΟΝ",
       "size": "Μέγεθος",
       "watch_video_review": "Δείτε βίντεο κριτική",
@@ -254,7 +261,6 @@
       "free_shipping": "Δωρεάν αποστολή",
       "gift_phone_case": "Δώρο <a style=\"text-decoration: underline;\" href=\"https://zarenabags.com/products/%D1%87%D0%B0%D0%BD%D1%82%D0%B8%D1%87%D0%BA%D0%B0-%D0%B7%D0%B0-%D1%82%D0%B5%D0%BB%D0%B5%D1%82%D0%BE%D0%BD-%D1%81-%D0%BF%D1%80%D0%B8%D0%BD%D1%82\">τσαντάκι για κινητό</a> αν η συνολική αξία της παραγγελίας σας υπερβαίνει τα 300 ευρώ.",
       "best_price_season": "Η καλύτερη τιμή αυτή τη σεζόν αν αγοράσετε ΤΩΡΑ!",
-      "with_discount_included": "με συμπεριλαμβανόμενη έκπτωση",
       "buy_for_amount_per_month": "ΑΓΟΡΑΣΤΕ ΜΟΝΟ ΓΙΑ {{ amount }} ευρώ / μήνα",
       "three_months_no_markup": "για 3 μήνες ΧΩΡΙΣ ΕΠΙΒΑΡΥΝΣΗ με",
       "complete_order_tbi": "Για να ολοκληρώσετε την παραγγελία, επιλέξτε tbi bank ως μέθοδο πληρωμής.",
@@ -586,6 +592,21 @@
       },
       "shipping": {
         "shipping_information_required_notice": "Εισάγετε γραφείο SPEEDY ή διεύθυνση παράδοσης, για ΔΩΡΕΑΝ αποστολή."
+      },
+      "payment_gateway": {
+        "cash_on_delivery_label": "Αντικαταβολή"
+      }
+    }
+  },
+  "customer_accounts": {
+    "order_details": {
+      "payment": {
+        "manual_payment_methods": {
+          "cash_on_delivery": "Αντικαταβολή - {{formattedTransactionAmount}}"
+        },
+        "payment_type": {
+          "cash_on_delivery": "Αντικαταβολή"
+        }
       }
     }
   }
