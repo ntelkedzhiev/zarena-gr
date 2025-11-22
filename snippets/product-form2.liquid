@@ -346,6 +346,7 @@
             {% assign price_with_discount =  product_price | times: multiplier | times: 0.01 %}
             {% assign loan_value = price_with_discount |  divided_by: 3 | money_without_currency %}
           {% endif %}
+          {% comment %} TBI Bank button - Commented out
           {% if total_price > 10000 and product.available and product.metafields.custom.presale.value != true %}
             <button class="tbi_button_container2" id="tbi_button_container">
               <div class="tbi_button2" id="tbi_button">
@@ -356,11 +357,13 @@
               </div>
             </button>
           {% endif %}
+          {% endcomment %}
         {% endif %}
         {% if product.metafields.custom.preorder == true %}
           <div class="selling-point">PREORDER</div>
         {% endif %}
       </form>
+      {% comment %} TBI Bank modal - Commented out
       <div id="info-modal" class="info-modal" style="display: none;">
         <div class="info-modal-content">
             <p>{{ 'product.added_to_cart' | t }}</p>
@@ -372,6 +375,7 @@
             </div>
         </div>
       </div>
+      {% endcomment %}
       <div class="hidden-desktop" style="margin-top: 12px">
         <loox-snippets-widget product-id="{{ product.id }}"></loox-snippets-widget>
       </div>
@@ -568,6 +572,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     var _learnq = window._learnq || [];
 
+    /* TBI Bank modal JavaScript - Commented out
     var infoModal = document.getElementById('info-modal');
     var modalClose = document.getElementById('info-modal-close');
     var checkoutButton = document.getElementById('info-modal-checkout');
@@ -596,11 +601,12 @@
         infoModal.style.display = 'none';
       }
     });
-    
+
     checkoutButton.addEventListener('click', function () {
       // Redirect to the checkout page
       window.location.href = '/checkout';
     });
+    */
 
     var playVideoBtn = document.getElementById('play-video-btn');
     if (playVideoBtn) {

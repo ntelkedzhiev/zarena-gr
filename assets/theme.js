@@ -4088,12 +4088,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       clickedSubmitterId = this.id;
     });
 
+    /* TBI Bank button JavaScript - Commented out
     var tbiButton = document.getElementById('tbi_button_container');
     if (tbiButton) {
       tbiButton.addEventListener('click', function () {
         clickedSubmitterId = "tbi_button_container";
       });
     }
+    */
 
 
     $form_param.filter('[data-ajax-add-to-cart="true"]:not(.feedback-go_to_cart)').on('submit', function (e) {
@@ -4167,7 +4169,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           const discountCodeTitle = product.discounts[0]?.title;
           const shouldShowDiscount = discountCodeTitle && discountedPrice < regularPrice;
 
-          if (clickedSubmitterId !== "tbi_button_container") {
+          if (clickedSubmitterId !== "tbi_button_container") { /* TBI Bank check - Commented out */
             showThemeModal([
               '<div id="added-to-cart" class="theme-modal theme-modal--small" role="dialog" aria-modal="true" aria-labelledby="added-to-cart-title">', 
               "<div class=\"inner\" style=\"top:".concat(offset, "px\">"), 

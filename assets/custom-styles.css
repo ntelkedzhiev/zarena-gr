@@ -814,6 +814,7 @@ h1.product-single__title {
     text-align: center;
 }
 
+/* TBI Bank CSS - Commented out
 label[for="payment_method_tbi_bank"] img {
     width: 80px;
 }
@@ -854,7 +855,7 @@ label[for="payment_method_tbi_bank"] img {
 .tbi_button_body2:hover {
     background: #fff;
     border: 1px solid #ff6600;
-    color: #ff6600; /* Optional: adjust text color if needed */
+    color: #ff6600;
 }
 
 .tbi_button_logo2 {
@@ -1117,6 +1118,7 @@ label[for="payment_method_tbi_bank"] img {
         align-items: flex-end;
     }
 }
+*/
 
 .info-modal {
     position: fixed;
@@ -1214,6 +1216,22 @@ label[for="payment_method_tbi_bank"] img {
         margin-top: -4px;
         margin-bottom: 8px;
         font-size: 16px;
+    }
+}
+
+/* Fix product sale label width for Greek text */
+.product-label.sale {
+    font-size: 10px;
+    padding: 6px 8px;
+    line-height: 1.2;
+    width: fit-content;
+    max-width: none;
+}
+
+@media (max-width: 767px) {
+    .product-label.sale {
+        font-size: 9px;
+        padding: 5px 6px;
     }
 }
 
