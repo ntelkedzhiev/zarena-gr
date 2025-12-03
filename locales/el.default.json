@@ -585,9 +585,7 @@
         "continue_to_payment_method": "Συνέχεια"
       },
       "contact": {
-        "shipping_address_title": "Συμπληρώστε διεύθυνση για δωρεάν αποστολή σε ένα γραφείο της Speedy ή για δωρεάν αποστολή στη διεύθυνσή σας",
-        "email_or_phone_label": "Email",
-        "email_or_phone_placeholder": "Email"
+        "shipping_address_title": "Συμπληρώστε διεύθυνση για δωρεάν αποστολή σε ένα γραφείο της Speedy ή για δωρεάν αποστολή στη διεύθυνσή σας"
       },
       "thank_you": {
         "title": "Ευχαριστούμε για την παραγγελία σας! Σε περίπτωση που δεν έχετε λάβει μήνυμα επιβεβαίωση στην ηλεκτρονική σας διεύθυνση, παρακαλούμε να ελέγξετε τον φάκελο «ΑΝΕΠΙΘΥΜΗΤΗ ΑΛΛΗΛΟΓΡΑΦΙΑ» ή τον φάκελο «ΔΙΑΦΗΜΙΣΤΙΚΑ ΜΗΝΥΜΑΤΑ»!"
@@ -596,10 +594,8 @@
         "shipping_information_required_notice": "Εισάγετε γραφείο SPEEDY ή διεύθυνση παράδοσης, για ΔΩΡΕΑΝ αποστολή."
       },
       "payment_gateway": {
-        "cash_on_delivery_label": "Αντικαταβολή"
-      },
-      "alternative_payment_method_banner": {
-        "express_checkout": "Ταχεία πληρωμή"
+        "cash_on_delivery_label": "Αντικαταβολή",
+        "credit_card_label": "Χρεωστική / Πιστωτική Κάρτα"
       }
     }
   },
