@@ -596,6 +596,9 @@
       "payment_gateway": {
         "cash_on_delivery_label": "Αντικαταβολή",
         "credit_card_label": "Χρεωστική / Πιστωτική Κάρτα"
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Γρήγορη πληρωμή"
       }
     }
   },
