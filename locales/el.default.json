@@ -595,6 +595,9 @@
       },
       "payment_gateway": {
         "cash_on_delivery_label": "Αντικαταβολή"
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Ταχεία πληρωμή"
       }
     }
   },
