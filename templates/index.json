@@ -258,6 +258,14 @@
             "placeholder_image": "shopify://shop_images/085_60261122_72bc9616-d92f-4976-acb1-aa5e04e963d4.jpg"
           }
         },
+        "collection_info_cXTjtX": {
+          "type": "collection_info",
+          "settings": {
+            "collection_name": "Πορτοφόλια",
+            "collection": "portofolia",
+            "placeholder_image": "shopify://shop_images/zarena0041copy_1df25f3e-973c-4099-9071-f4999ccb05cf.png"
+          }
+        },
         "collection_info_PQXnAP": {
           "type": "collection_info",
           "settings": {
@@ -272,6 +280,7 @@
         "bbdff939-ecda-4d48-b728-f5f7f655009d",
         "83d74085-9836-4dd3-84a5-cc0e65921df3",
         "56dee240-b923-4b1f-9922-60aa6150d719",
+        "collection_info_cXTjtX",
         "collection_info_PQXnAP"
       ],
       "settings": {
