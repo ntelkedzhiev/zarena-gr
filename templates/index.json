@@ -14,6 +14,7 @@
       "blocks": {
         "image_pa3KVH": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Zarena_nova-kol2_desktop-slider_GR_40044a80-4d61-4bc3-adff-e20d60ff40d5.jpg",
             "mobile_image": "shopify://shop_images/Zarena_nova-kol2_mobile-slider_GR_ec9b65d3-2861-4522-8ccf-c4a9af2a4b63.jpg",
@@ -63,7 +64,6 @@
         },
         "image_TJAGmj": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Zarena_prazn-kamp_GR_desktop-slider.jpg",
             "mobile_image": "shopify://shop_images/Zarena_prazn-kamp_GR_mobile-slider.jpg",
