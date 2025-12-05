@@ -65,10 +65,12 @@
           "type": "image",
           "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/Zarena_prazn-kamp_GR_desktop-slider.jpg",
+            "mobile_image": "shopify://shop_images/Zarena_prazn-kamp_GR_mobile-slider.jpg",
             "gradient_overlay": false,
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
-            "slide_link": "shopify://collections/outlet-do-50",
+            "slide_link": "shopify://collections/ola-ta-proionta",
             "subheading": "",
             "hide_subheading_mobile": false,
             "title": "",
