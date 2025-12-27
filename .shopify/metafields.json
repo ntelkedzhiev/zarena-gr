@@ -10,6 +10,256 @@
   "page": [],
   "product": [
     {
+      "key": "frequency_type",
+      "namespace": "custom",
+      "name": "Frequency Type",
+      "description": "Frequency type can be \"normal\" or \"trail\"",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "refid",
+      "namespace": "custom",
+      "name": "refId",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "texture",
+      "namespace": "info",
+      "name": "Texture",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "ingredients",
+      "namespace": "info",
+      "name": "Ingredients",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "analytical_constituents",
+      "namespace": "info",
+      "name": "Analytical constituents",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "suitable_for",
+      "namespace": "info",
+      "name": "Suitable for",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "heading",
+      "namespace": "info",
+      "name": "Heading",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "subheading",
+      "namespace": "info",
+      "name": "Subheading",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "feature1",
+      "namespace": "info",
+      "name": "Feature1",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "feature2",
+      "namespace": "info",
+      "name": "Feature2",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "feature3",
+      "namespace": "info",
+      "name": "Feature3",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "heading-new",
+      "namespace": "info",
+      "name": "Rich Text Heading",
+      "description": "",
+      "type": {
+        "name": "rich_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "account_popup_feature1",
+      "namespace": "info",
+      "name": "Account Popup Feature 1",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "account_popup_feature2",
+      "namespace": "info",
+      "name": "Account Popup Feature 2",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "account_popup_feature3",
+      "namespace": "info",
+      "name": "Account Popup Feature 3",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "account_popup_subheading",
+      "namespace": "info",
+      "name": "Account Popup Subheading",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "ribbon_text",
+      "namespace": "info",
+      "name": "Ribbon Text",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "ribbon_background_color",
+      "namespace": "info",
+      "name": "Ribbon Background Color",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "discounted_price",
+      "namespace": "info",
+      "name": "Discounted Price",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "feature1_icon",
+      "namespace": "info",
+      "name": "Feature1 Icon",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "feature3_icon",
+      "namespace": "info",
+      "name": "Feature3 Icon",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "feature2_icon",
+      "namespace": "info",
+      "name": "Feature2 Icon",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "account_popup_feature_icon_1",
+      "namespace": "custom",
+      "name": "Account Popup Feature Icon 1",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "account_popup_feature_icon_2",
+      "namespace": "custom",
+      "name": "Account Popup Feature Icon 2",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "account_popup_feature_icon_3",
+      "namespace": "custom",
+      "name": "Account Popup Feature Icon 3",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
       "key": "custom_product",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Product",
@@ -17,236 +267,6 @@
       "type": {
         "name": "boolean",
         "category": "TRUE_FALSE"
-      }
-    },
-    {
-      "key": "img_var",
-      "namespace": "custom",
-      "name": "Img.var",
-      "description": "",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "special_discount_code",
-      "namespace": "custom",
-      "name": "Special Discount Code",
-      "description": "",
-      "type": {
-        "name": "json",
-        "category": "JSON"
-      }
-    },
-    {
-      "key": "collection_handle",
-      "namespace": "custom",
-      "name": "Collection Handle",
-      "description": "Id of collection",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "functionality",
-      "namespace": "custom",
-      "name": "Functionality",
-      "description": "",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "description",
-      "namespace": "custom",
-      "name": "Description",
-      "description": "",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "size_and_dimensions",
-      "namespace": "custom",
-      "name": "Size and dimensions",
-      "description": "",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "materials",
-      "namespace": "custom",
-      "name": "Materials",
-      "description": "",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "why_our_products",
-      "namespace": "custom",
-      "name": "Why our products",
-      "description": "",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "real_life_image_1",
-      "namespace": "custom",
-      "name": "Real Life Image 1",
-      "description": "",
-      "type": {
-        "name": "file_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "real_life_image_2",
-      "namespace": "custom",
-      "name": "Real Life Image 2",
-      "description": "",
-      "type": {
-        "name": "file_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "real_life_image_3",
-      "namespace": "custom",
-      "name": "Real Life Image 3",
-      "description": "",
-      "type": {
-        "name": "file_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "color_text",
-      "namespace": "product",
-      "name": "Color",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "new",
-      "namespace": "filter",
-      "name": "Header new filter",
-      "description": "",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
-    {
-      "key": "promotion",
-      "namespace": "filter",
-      "name": "Header promotion filter",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "type",
-      "namespace": "filter",
-      "name": "Header type filter",
-      "description": "",
-      "type": {
-        "name": "single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "preorder",
-      "namespace": "custom",
-      "name": "Preorder",
-      "description": "",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
-    {
-      "key": "video_mobile",
-      "namespace": "content",
-      "name": "Product video (mobile)",
-      "description": "",
-      "type": {
-        "name": "file_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "video_desktop",
-      "namespace": "content",
-      "name": "Product video (desktop)",
-      "description": "",
-      "type": {
-        "name": "file_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "progressive_discount",
-      "namespace": "promotions",
-      "name": "Progressive discount",
-      "description": "",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
-    {
-      "key": "presale",
-      "namespace": "custom",
-      "name": "Presale",
-      "description": "",
-      "type": {
-        "name": "boolean",
-        "category": "TRUE_FALSE"
-      }
-    },
-    {
-      "key": "instagram_posts",
-      "namespace": "custom",
-      "name": "Instagram Posts",
-      "description": "",
-      "type": {
-        "name": "list.single_line_text_field",
-        "category": "TEXT"
-      }
-    },
-    {
-      "key": "availability_date",
-      "namespace": "custom",
-      "name": "Product Availability Date",
-      "description": "Expected date when the product will be back in stock",
-      "type": {
-        "name": "date",
-        "category": "DATE_TIME"
-      }
-    },
-    {
-      "key": "care_guide",
-      "namespace": "custom",
-      "name": "Care guide",
-      "description": "custom.care_guide",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
       }
     },
     {
@@ -258,14 +278,454 @@
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
+    },
+    {
+      "key": "product_subtype",
+      "namespace": "info",
+      "name": "Product subtype",
+      "description": "",
+      "type": {
+        "name": "metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "protein",
+      "namespace": "info",
+      "name": "Protein",
+      "description": "",
+      "type": {
+        "name": "metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "pet-food-flavor",
+      "namespace": "shopify",
+      "name": "Pet food flavor",
+      "description": "Specifies the taste profile of pet food products, e.g. banana, turkey",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "pet-food-form",
+      "namespace": "shopify",
+      "name": "Pet food form",
+      "description": "Indicates the consistency of pet food products, such as wet or dry",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "queries",
+      "namespace": "shopify--discovery--product_search_boost",
+      "name": "Search product boosts",
+      "description": "List of search queries for which a product gets higher rank in search results",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "related_products",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Related products",
+      "description": "List of related products",
+      "type": {
+        "name": "list.product_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "related_products_display",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Related products settings",
+      "description": "Determines how related products are displayed along with algorithmic product recommendations",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "complementary_products",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "Complementary products",
+      "description": "List of complementary products",
+      "type": {
+        "name": "list.product_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "description",
+      "namespace": "custom",
+      "name": "description",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "descriptive_name",
+      "namespace": "custom",
+      "name": "Descriptive Name",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "release_date",
+      "namespace": "custom",
+      "name": "Release date",
+      "description": "",
+      "type": {
+        "name": "date_time",
+        "category": "DATE_TIME"
+      }
+    },
+    {
+      "key": "extras_promo_image",
+      "namespace": "custom",
+      "name": "Extras Promo Image",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "product_subtype_hydrogen",
+      "namespace": "info",
+      "name": "Product subtype hydrogen",
+      "description": "",
+      "type": {
+        "name": "metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "package-type",
+      "namespace": "shopify",
+      "name": "Package type",
+      "description": "Defines the type of packaging for a product, e.g. jar, pump",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "dog-age-group",
+      "namespace": "shopify",
+      "name": "Dog age group",
+      "description": "Helps sort dog supplies according to the dog's life stage, e.g. puppy, senior",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "plp_header_image",
+      "namespace": "custom",
+      "name": "PLP Header Image",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "custom_canonical",
+      "namespace": "custom",
+      "name": "Custom Canonical URL",
+      "description": "Used to point to shop.years.com products",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "surcharge",
+      "namespace": "custom",
+      "name": "Surcharge",
+      "description": "",
+      "type": {
+        "name": "number_decimal",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "pet-supply-product-form",
+      "namespace": "shopify",
+      "name": "Pet supply product form",
+      "description": "Defines the format of a pet product, such as liquid, tablet, or spray",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "account_popup_image",
+      "namespace": "custom",
+      "name": "Account Popup Image",
+      "description": "",
+      "type": {
+        "name": "url",
+        "category": "URL"
+      }
+    },
+    {
+      "key": "exclusive_release_faq",
+      "namespace": "custom",
+      "name": "Exclusive Release FAQ",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "vitamins_and_minerals",
+      "namespace": "custom",
+      "name": "Vitamins and Minerals",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "weight",
+      "namespace": "custom",
+      "name": "Weight",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "nutrition",
+      "namespace": "custom",
+      "name": "Nutrition",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "ingredients",
+      "namespace": "custom",
+      "name": "Ingredients",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "features",
+      "namespace": "custom",
+      "name": "Features",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "plp_header_description",
+      "namespace": "custom",
+      "name": "PLP Header Description",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "exclusive_release_meals_total",
+      "namespace": "custom",
+      "name": "Exclusive Release Meals Total",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "exclusive_release_meals_initial",
+      "namespace": "custom",
+      "name": "Exclusive Release Meals Initial",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "pet-dietary-requirements",
+      "namespace": "shopify",
+      "name": "Pet dietary requirements",
+      "description": "Defines the nutritional benefits provided by a pet product, such as weight control or dental health",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "food-product-form",
+      "namespace": "shopify",
+      "name": "Food product form",
+      "description": "Specifies the form in which the food product is presented, such as dried or frozen",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "dietary-preferences",
+      "namespace": "shopify",
+      "name": "Dietary preferences",
+      "description": "Helps identify products suitable for specific diets, e.g. vegan, nut free",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "pet-dietary-preferences",
+      "namespace": "shopify",
+      "name": "Pet dietary preferences",
+      "description": "Identifies the dietary needs or restrictions of a pet, like grain-free or non-GMO",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "allergen-information",
+      "namespace": "shopify",
+      "name": "Allergen information",
+      "description": "Indicates potential allergens present in food or beverages, such as wheat or peanuts",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "bundle_contents",
+      "namespace": "info",
+      "name": "Bundle contents",
+      "description": "",
+      "type": {
+        "name": "json",
+        "category": "JSON"
+      }
+    },
+    {
+      "key": "earliest_delivery_date",
+      "namespace": "custom",
+      "name": "Earliest delivery date",
+      "description": "",
+      "type": {
+        "name": "date",
+        "category": "DATE_TIME"
+      }
+    },
+    {
+      "key": "latest_delivery_date",
+      "namespace": "custom",
+      "name": "Latest delivery date",
+      "description": "",
+      "type": {
+        "name": "date",
+        "category": "DATE_TIME"
+      }
+    },
+    {
+      "key": "subproducts",
+      "namespace": "custom",
+      "name": "Subproducts",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "purchase_form_setup",
+      "namespace": "custom",
+      "name": "Purchase Form Setup",
+      "description": "",
+      "type": {
+        "name": "metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "whats_new_card_color",
+      "namespace": "custom",
+      "name": "Whats New Card Color",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "product_badge",
+      "namespace": "custom",
+      "name": "Product Badge",
+      "description": "",
+      "type": {
+        "name": "metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "product_subtypes",
+      "namespace": "custom",
+      "name": "Product Subtypes",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
     }
   ],
   "variant": [
     {
+      "key": "calorie_low",
+      "namespace": "custom",
+      "name": "Calorie Low",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "calorie_high",
+      "namespace": "custom",
+      "name": "Calorie High",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
       "key": "custom_label_4",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 4",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -275,7 +735,7 @@
       "key": "custom_label_3",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 3",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -285,7 +745,7 @@
       "key": "custom_label_2",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 2",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -295,7 +755,7 @@
       "key": "custom_label_1",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 1",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -305,7 +765,7 @@
       "key": "custom_label_0",
       "namespace": "mm-google-shopping",
       "name": "Google: Custom Label 0",
-      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+      "description": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns",
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
@@ -372,5 +832,26 @@
       }
     }
   ],
-  "shop": []
+  "shop": [
+    {
+      "key": "merchant_id",
+      "namespace": "mm_google_shopping_extension",
+      "name": "Google: Merchant ID",
+      "description": "Currently Linked Merchant Center ID",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "show_store_widget_app_embed_block",
+      "namespace": "mm_google_shopping_extension",
+      "name": "Google: Show Store Widget App Embed Block",
+      "description": "Indicates if the store widget app embed block should be shown.",
+      "type": {
+        "name": "boolean",
+        "category": "TRUE_FALSE"
+      }
+    }
+  ]
 }

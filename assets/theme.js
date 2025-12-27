@@ -4164,8 +4164,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             offset = nav.bar.height();
           }
 
-          const regularPrice = (product.price / 100).toFixed(2) + ' лв.'
-          const discountedPrice = (product.discounted_price / 100).toFixed(2) + ' лв.';
+          const regularPrice = (product.price / 100).toFixed(2) + ' €'
+          const discountedPrice = (product.discounted_price / 100).toFixed(2) + ' €';
           const discountCodeTitle = product.discounts[0]?.title;
           const shouldShowDiscount = discountCodeTitle && discountedPrice < regularPrice;
 
@@ -4178,7 +4178,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               '<div class="cart-product">', "<div class=\"cart-product__image\"><img src=\"".concat(thumbUrl, "\" alt=\"").concat(product.featured_image.alt, "\"/></div>"), 
               '<div class="cart-product__content">' + '<p class="cart-product__content__title">', product.product_title, '</p>' + "".concat(variantHtml ? variantHtml : ''),
               // '<p style=\"color:#c81853;text-align:left;font-size:13px;font-weight:bold\">Остават ограничени бройки!</p>',
-              shouldShowDiscount ? '<p style=\"color:#c81853;text-align:left;font-size:13px;font-weight:bold\">' + 'Кодът ' + discountCodeTitle + ' е добавен към твоята количка!' + '</p>' : '',
+              shouldShowDiscount ? '<p style=\"color:#c81853;text-align:left;font-size:13px;font-weight:bold\">' + 'Ο κωδικός ' + discountCodeTitle + ' προστέθηκε στο καλάθι σου!' + '</p>' : '',
               shouldShowDiscount ? '<p><span style=\"text-decoration:line-through;color:black\">' + regularPrice + '</span>' + '<span style=\"margin-left: 8px;font-weight:bold\">' + discountedPrice + '</span>' + '</p>' : '',
               '</div>', 
               '</div>',
