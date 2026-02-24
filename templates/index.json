@@ -114,6 +114,7 @@
         },
         "image_ybmw8g": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Zarena_posl-shans-35_website_desktop-banner_gr.jpg",
             "mobile_image": "shopify://shop_images/Zarena_posl-shans-35_website_moblie-banner_gr.jpg",
