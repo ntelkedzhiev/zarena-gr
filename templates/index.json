@@ -139,12 +139,13 @@
         },
         "image_3eQzgX": {
           "type": "image",
-          "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/Zarena_posl-shans-35_website_desktop-banner_gr_v2.jpg",
+            "mobile_image": "shopify://shop_images/Zarena_posl-shans-35_website_moblie-banner_gr_v2.jpg",
             "gradient_overlay": false,
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
-            "slide_link": "shopify://collections/novi-letni-predlozhenia-25",
+            "slide_link": "shopify://collections/ola-ta-proionta",
             "subheading": "",
             "hide_subheading_mobile": false,
             "title": "",
