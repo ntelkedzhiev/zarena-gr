@@ -188,6 +188,7 @@
         },
         "image_a99qGD": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Zarena_Sez-nam_desktop-slider_GR.jpg",
             "mobile_image": "shopify://shop_images/Zarena_Sez-nam_mobile-slider.jpg",
