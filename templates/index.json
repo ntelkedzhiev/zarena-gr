@@ -38,6 +38,7 @@
         },
         "image_f7QjjY": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Zarena_lastchance50_desktop-slider.jpg",
             "mobile_image": "shopify://shop_images/Zarena_lastchance50_mobile-slider.jpg",
